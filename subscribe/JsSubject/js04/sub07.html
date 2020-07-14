@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+	var price = [209000, 109000, 119000, 109000, 94000];
+	console.log("상품가격 --> " + price);
+
+	for( var i=0; i < price.length-1; i++)
+	{
+		for(var j=i+1; j < price.length; j++)
+		{
+			if(price[i] > price[j])
+			{
+				var tmp = price[i];
+				price[i] = price[j];
+				price[j] = tmp;
+			}
+		}
+	}
+	console.log("낮은가격순 --> " + price);
+	</script>
+</head>
+<style type="text/css">
+
+
+</style>
+
+<body>
+
+</body>
+</html>

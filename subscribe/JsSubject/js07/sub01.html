@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+	minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+		function image_step() {
+			var num = 0;
+			setInterval(function() {
+				var img = ['1.gif', '2.gif', '3.gif'];
+				num = (num+1)%img.length;
+				document.getElementById("lyan").src = img[num];
+			}, 3000);
+		}
+	</script>
+</head>
+<style type="text/css">
+</style>
+
+<body onload="image_step()">
+	<img src="1.gif" id="lyan" width="480" height="480" />
+</body>
+</html>

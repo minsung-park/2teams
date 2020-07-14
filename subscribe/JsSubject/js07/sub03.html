@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+	minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+		function check_agree() {
+			var count = 0;
+			var checkbox = document.myform.agree;
+
+			for(var i = 0; i < document.myform.agree.length; i++)
+			{
+				if(checkbox[i].checked)
+					count++;
+			}
+
+			if(count < 3) {
+				alert("모든 약관에 동의하셔야 합니다.");
+				return false;
+			}
+
+			alert("모든 약관에 동의했습니다.");
+			document.form1.submit();
+
+		}
+
+	</script>
+</head>
+
+<body>
+	<form name="myform" onsubmit="check_agree(); return false;">
+		<label for="agree1">
+			<input type="checkbox" name="agree" id="agree1" /> 약관1
+		</label>
+		<label for="agree2">
+			<input type="checkbox" name="agree" id="agree2" /> 약관3
+		</label>
+		<label for="agree3">
+			<input type="checkbox" name="agree" id="agree3" /> 약관2
+		</label>
+
+		<input type="submit" value="회원가입" />
+	</form>
+</body>
+</html>

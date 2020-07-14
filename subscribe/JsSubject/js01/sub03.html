@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+		var my_height = prompt("키를 입력하세요");
+		var my_weight = prompt("몸무게를 입력하세요");
+		var std_weight;
+		var obesity;
+
+		if(my_height <= 150)
+			std_weight = my_height - 110;
+		else
+			std_weight = (my_height - 110)*0.9;
+
+		obesity = ((my_weight - std_weight) / std_weight) * 100;
+
+		if(obesity <= 20)
+			document.write("<h1>20% 이하 - 정상(안심)</h1>");
+		else if(obesity <= 30)
+			document.write("<h1>20% 초과, 30% 이하 - 경도비만(주의)</h1>");
+		else if(obesity <= 50)
+			document.write("<h1>30% 초과, 50% 이하 - 중증도 비만(위험)</h1>");
+		else
+			document.write("<h1>50% 초과 - 고도비만(매우위험)</h1>");
+	</script>
+</head>
+<style type="text/css">
+
+
+</style>
+
+<body>
+
+</body>
+</html>

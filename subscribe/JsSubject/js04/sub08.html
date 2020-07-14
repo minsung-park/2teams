@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+		var arr = [5, 3, 2, 8, 9];
+		console.log('before --> ' + arr);
+		for(var i = 0; i < parseInt(arr.length/2); i++)
+		{
+			var tmp = arr[i];
+			arr[i] = arr[arr.length-i -1];
+			arr[arr.length-i -1] = tmp;
+		}
+
+		console.log('after --> ' + arr);
+
+	</script>
+</head>
+<style type="text/css">
+
+
+</style>
+
+<body>
+
+</body>
+</html>
