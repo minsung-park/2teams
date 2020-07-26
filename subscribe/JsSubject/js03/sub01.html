@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript Test</title>
+	<style>
+		#console {
+			margin: 10px 0;
+			padding: 10px;
+			border: 1px solid #d5d5d5;
+			background-color: #eee;
+			font-size: 20px;
+			font-weight : bold;
+		}
+	</style>
+
+	<script type="text/Javascript">
+
+		function clickAge(){
+			var mydate = new Date();
+			var now_year = mydate.getFullYear();
+			var age = prompt("나이를 입력하세요.","");
+			var year = now_year - age + 1;
+
+			if(age != null && !isNaN(age) && age != "")
+			{
+				document.getElementById("console").innerHTML = "당신이 태어난 년도는 " + year + "년 입니다.";
+			}
+			else
+			{
+				alert("올바른 입력값이 아닙니다.");
+			}
+		}
+
+		function clickYear(){
+			var mydate = new Date();
+			var now_year = mydate.getFullYear();
+			var year = prompt("태어난 년도를 입력하세요.","");
+			var age = now_year - year + 1;
+
+			if(year != null && !isNaN(year) && year != "")
+			{
+				document.getElementById("console").innerHTML = "당신의 나이는 " + age + "세 입니다.";
+			}
+			else
+			{
+				alert("올바른 입력값이 아닙니다.");
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<button onclick="clickYear()">태어난 년도로 나이 계산하기</button>
+		<button onclick="clickAge()">나이로 태어난 년도 계산하기</button>
+	</div>
+	<div id="console">
+
+	</div>
+</body>
+
+</html>

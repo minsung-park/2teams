@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+
+/* 내용 영역 */
+#content {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 500px;
+}
+
+#content h1 {
+    font-size:25px;
+    padding: 15px 5px;
+}
+
+#content ul {
+    display: inline-block;
+}
+
+#content .item_box {
+   /* 영역 확인용 */
+   border-bottom: 3px solid black;
+   padding:5px;
+   margin:3px;
+}
+
+#content .popular_item1 .item_box ul>li {
+    float: left;
+    width: 100%;
+    border: 2px solid white;
+    padding : 2px;
+    text-align: center;
+}
+
+#content .popular_item2 .item_box ul>li {
+    float: left;
+    width: 48%;
+    border: 2px solid white;
+    text-align: center;
+}
+
+#content .item_box .product .desc {
+    padding: 10px;
+}
+
+.onTop {
+    border:0;
+    width: 50px;
+    height: 30px;
+    background:#fcb326;
+    position:fixed;
+    bottom:10%;
+    right:3.5%;
+    border-radius: 50%;
+}
+
+/* 더보기 버튼 */
+#content #more {
+    margin:10px;
+    background:#00799b;
+    padding:5px 10px;
+    border-radius: 20px;
+    border:0;
+    float:right;
+}
+
+/* 금주의 이슈 영역 */
+#content .item_box .issue_li {
+    float:left;
+    width: 100%;
+    border: 2px solid white;
+    padding: 5px;
+
+}
+
+#content .issue_li .issue_img {
+    float:left;
+    width:33%;
+    height:100%;
+    margin-right:10px;
+}
+
+
+#content .issue_li .name {
+    font-size: 1.1em;
+    line-height:10px;
+
+}
+
+#content .issue_li .price {
+    font-size: 0.8em;
+    padding-left:10px;
+}
+
+/*#content .issue_li p {
+
+   overflow: hidden;
+   text-overflow: ellipsis;
+}*/
+

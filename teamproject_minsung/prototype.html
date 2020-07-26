@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--페이지 설정 부분-->
+
+<head>
+    <meta charset="utf-8" />
+    <!--IE호환성 보기 모드 금지-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--스마트 디바이스에서의 해상도 균일화 처리-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scalable=no" />
+    <style type="text/css">
+        th, td{
+            padding: 2px;
+        }
+    </style>
+    <!--브라우저에 표시될 문서 제목-->
+    <title>My Web Page</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <ul>
+                <li>
+                    <a href="#" id="menu">메뉴버튼[≡]</a>
+                    <ul>
+                        <li>상품상세
+                            <li>CPU</li>
+                            <li>메인보드</li>
+                            <li>VGA(그래픽)</li>
+                            <li>RAM</li>
+                            <li>파워</li>
+                            <li>케이스</li>
+                            <li>저장장치</li>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="index.html" id="index">
+                        <h1>웰컴</h1>
+                        <h6>좋은 컴퓨터를 <br />만드는 사람들</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" id="search">돋보기</a>
+                </li>
+                <li>
+                    <a href="/cart.html" id="cart">카트모양</a>
+                </li>
+            </ul>
+            <hr />
+        </div>
+        <div id="content">
+            <div id="custom">
+                <title>조립 완제품</title>
+                <ul>
+                    <li>
+                        <a href="custom_pc1">
+                            <span class="custom_thumb"><img src="조립pc1" alt="조립pc1">조립 완제품1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="custom_pc2">
+                            <span class="custom_thumb"><img src="조립pc2" alt="조립pc2">조립 완제품2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="custom_pc3">
+                            <span class="custom_thumb"><img src="조립pc3" alt="조립pc3">조립 완제품3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="custom_pc_index">더 보기</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="recommand">
+                <title>추천상품</title>
+                <ul>
+                    <li>
+                        <a href="recommand1">
+                            <span class="stuff_thumb"><img src="추천상품1" alt="추천상품1">추천상품1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recommand2">
+                            <span class="stuff_thumb"><img src="추천상품2" alt="추천상품2">추천상품2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recommand3">
+                            <span class="stuff_thumb"><img src="추천상품3" alt="추천상품3">추천상품3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recommand_index">더 보기</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="best">
+                <title>인기상품</title>
+                <ul>
+                    <li>
+                        <a href="best1">
+                            <span class="stuff_thumb"><img src="인기상품1" alt="인기상품1">인기상품1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="best2">
+                            <span class="stuff_thumb"><img src="인기상품2" alt="인기상품2">인기상품2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="best3">
+                            <span class="stuff_thumb"><img src="인기상품3" alt="인기상품3">인기상품3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="best_index">더 보기</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="notice">
+                <title>공지사항</title>
+                <ul>
+                    <li>
+                        <a href="notice1">
+                            <span class="notice_thumb"><img src="공지사항1" alt="공지사항1"></span>
+                            <span class="article_thumb">공지사항1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notice2">
+                            <span class="notice_thumb"><img src="공지사항2" alt="공지사항2"></span>
+                            <span class="article_thumb">공지사항2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notice3">
+                            <span class="notice_thumb"><img src="공지사항2" alt="공지사항2"></span>
+                            <span class="article_thumb">공지사항3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notice_index">더 보기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="company">
+                <table border="1">
+                    <tr>
+                        <th>회사소개</th>
+                        <th>이용약관</th>
+                        <th>채용정보</th>
+                        <th>개인정보 취급방침</th>
+                    </tr>
+                    <tr>
+                        <td>상호명</td>
+                        <td>(주)웰컴</td>
+                        <td rowspan="2">사업자등록번호</td>
+                        <td rowspan="2">123-87-12345</td>
+                    </tr>
+                    <tr>
+                        <td>대표이사</td>
+                        <td>박민성님</td>
+                    </tr>
+                    <tr>
+                        <td>대표번호</td>
+                        <td>1541-1339</td>
+                        <td rowspan="2">통신판매업신고</td>
+                        <td rowspan="2">제2020-서울서초-12345호</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">주소</td>
+                        <td rowspan="2">서울 서초구 서초대로 77길 55<br/> 에이프로스퀘어 3층</td>
+                    </tr>
+                    <tr>
+                        <td>개인정보관리책임자</td>
+                        <td>정경락</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

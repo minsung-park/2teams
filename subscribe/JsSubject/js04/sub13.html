@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+	function find(source, keyword) {
+		var count = 0;
+
+		while (true) {
+			var idx = source.indexOf(keyword);
+			if(idx > -1) { //단어가 검색되었다면?
+				count++;
+				// 이전 검색 위치를 제외한 나머지만 다시 변수에 저장한다.
+				source = source.substring(idx+keyword.length);
+			}
+			else {
+				break; //찾지 못하였으므로 반복중단.
+			}
+		}
+		return count;
+	}
+
+	var story = "소년은 개울가에서 소녀를 보게 되지만, 말도 제대로 못 붙이는 내성적인 성격이다. 어느 날, 소녀가 그런 소년에게 조약돌을 던져 관심을 나타내고, 소년은 이를 소중히 간직한다.";
+
+	var x = find(story, '소년');
+	var y = find(story, '소녀');
+	console.log('소년은 ' + x + '번, 소녀는 ' + y + '번 등장합니다.');
+
+	</script>
+</head>
+<style type="text/css">
+
+
+</style>
+
+<body>
+
+</body>
+</html>

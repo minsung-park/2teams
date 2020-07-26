@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+	minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+		function process() {
+			var sum = 0;
+			var avg = 0;
+
+			var myform = document.myform;
+
+			var html = myform.html.value;
+			var css = myform.css.value;
+			var js = myform.js.value;
+
+			if(isNaN(html))
+			{
+				alert("HTML의 점수는 숫자만 입력 가능합니다.");
+			}
+			else if(isNaN(css))
+			{
+				alert("CSS의 점수는 숫자만 입력 가능합니다.");
+			}
+			else if(isNaN(js))
+			{
+				alert("Javascript의 점수는 숫자만 입력 가능합니다.");
+			}
+			else if(html > 100 || html < 0)
+			{
+				alert("HTML의 점수는 0~100사이의 숫자만 입력 가능합니다.");
+			}
+			else if(css > 100 || css < 0)
+			{
+				alert("CSS 점수는 0~100사이의 숫자만 입력 가능합니다.");
+			}
+			else if(js > 100 || js < 0)
+			{
+				alert("Javascript의 점수는 0~100사이의 숫자만 입력 가능합니다.");
+			}
+			else
+			{
+				sum = Number(html)+Number(css)+Number(js);
+				avg = sum/3;
+				myform.sum.value = sum;
+				myform.avg.value = avg;
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form name="myform">
+		<table border="1" cellpadding="3" style="border-collapse:collapse; border-color:#eee">
+			<thead>
+				<tr>
+					<th></th>
+					<th align="center">HTML</th>
+					<th align="center">CSS</th>
+					<th align="center">Javascript</th>
+					<th align="center">총점</th>
+					<th align="center">평균</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>둘리</td>
+					<td><input type="text" name="html"></td>
+					<td><input type="text" name="css"></td>
+					<td><input type="text" name="js"></td>
+					<td><input type="text" name="sum"></td>
+					<td><input type="text" name="avg"></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="6" align="center">
+						<input type="button" value="총점,평균 계산" onclick="process()"/>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+	</form>
+</body>
+</html>

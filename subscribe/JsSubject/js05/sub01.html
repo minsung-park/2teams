@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+	var day_name = ['일', '월', '화', '수', '목', '금', '토'];
+	var date = new Date();
+	date.setDate(1);
+	var yy = date.getFullYear();		// 연도
+	var mm = date.getMonth()+1;			// 월
+	var dd = date.getDate();			// 일
+	var first_day = date.getDay();		// 요일 인덱스
+
+	console.log(yy + "년 " + mm + "월은 " + day_name[first_day] + "요일부터 시작합니다.");
+	</script>
+</head>
+<style type="text/css">
+
+
+</style>
+
+<body>
+
+</body>
+</html>

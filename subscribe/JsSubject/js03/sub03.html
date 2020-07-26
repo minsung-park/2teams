@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Javascript Test</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<script type="text/javascript">
+
+	function triangle(n1) {
+		document.getElementById("console").innerHTML = "";
+		for(var i = 1; i <= parseInt(n1); i++)
+		{
+			var number = "";
+			for(var j = 1; j <= i; j++)
+			{
+				number += "*";
+			}
+			document.getElementById("console").innerHTML += number;
+			document.getElementById("console").innerHTML += "<br />";
+		}
+	}
+	</script>
+</head>
+<style type="text/css">
+	#console {
+		margin: 10px 0;
+		padding : 10px;
+		border : 1px solid #d5d5d5;
+		background-color: #eee;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+</style>
+
+<body>
+	<button onclick="triangle(5)">5줄</button>
+	<button onclick="triangle(10)">10줄</button>
+	<button onclick="triangle(15)">15줄</button>
+	<div id="console">
+
+	</div>
+</body>
+</html>

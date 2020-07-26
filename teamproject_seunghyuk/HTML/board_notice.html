@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--페이지 설정 부분-->
+
+<head>
+    <meta charset="utf-8" />
+    <!--IE호환성 보기 모드 금지-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--스마트 디바이스에서의 해상도 균일화 처리-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            width: 100%;
+            height: 800px;
+        }
+
+        /* 상단 영역 */
+        #header {
+            width: 100%;
+            height: 80px;
+            background-color: #fff;
+            position: fixed;
+            border-bottom: 2px solid #eee;
+            top:0;
+
+        }
+
+        #header #pos_rel {
+            position: relative;
+        }
+
+        #header div {
+            width: 100%;
+            float: left;
+            margin: auto;
+        }
+
+        #header div span {
+            display: block;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #header div .logo {
+            display: inline-block;
+            width: 100%;
+        }
+
+        #header img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #header .icon {
+            width: 30px;
+        }
+
+
+        #header #left_menubar {
+            position: absolute;
+            left: 5%;
+            top: 11px;
+            width: 33%;
+        }
+
+        #header #logo_section {
+            width: 33%;
+            position: absolute;
+            left: 30%;
+            top: 1px;
+        }
+
+        #header #right_menubar {
+            width: 33%;
+            position: absolute;
+            right: 3%;
+            top: 12px;
+
+        }
+
+        #header #right_menubar a {
+            display: inline-block;
+            width: 47%;
+        }
+
+        #header a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+
+        /* 헤더 float 마감제 */
+        .clear {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+
+        /* 내용 영역 */
+        #content {
+            width: 100%;
+            margin-top:80px;
+            min-height: 500px;
+        }
+
+        /* 하단 영역 */
+        #footer {
+            width: 100%;
+            background-color: #262626;
+            min-height: 12%;
+            position: absolute;
+            top: 100%;
+        }
+
+        #footer #table_section {
+            padding-left: 50px;
+            padding-top: 30px;
+            width: 80%;
+        }
+
+        #footer table {
+            width: 100%;
+            font-size: 0.7em;
+            font-family: 'Helvetica', '맑은 고딕', 'sans-serif';
+            color: #fff;
+            line-height: 20px;
+        }
+
+        #footer table th {
+            width: 35%;
+            text-align: left;
+        }
+
+        #footer table td {
+            width: 65%;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #footer address {
+            background-color: #FCB329;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+            padding: 16px 0 20px 0;
+        }
+        /* 공통 작업 부분 끝 */
+        #notice_heading{
+            margin: auto;
+            padding-top: 100px;
+            float:left;
+            width:100%;
+            margin-bottom:1.5em;
+        }
+        #notice_heading a{
+            text-decoration: none;
+            display:inline-block;
+            width:100%;
+            text-align:center;
+            vertical-align: center;
+        }
+
+
+        #notice_heading a img{
+            float:left;
+
+        }
+        #notice_heading a img:after{
+            content:'';
+            display:block;
+            clear:both;
+            float:none;
+        }
+        #notice_heading .heading_title{
+
+
+            display:inline-block;
+            font-size:2em;
+            margin-right:1em;
+            line-height:50px;
+
+        }
+
+        #notice_table thead {
+            font-size:1.6em;
+            border-top: 1px solid #cyan;
+
+
+        }
+        #notice_table tbody{
+            font-size:1.2em;
+            padding:5px;
+            line-height:2.2em;
+        }
+        #notice_table tbody tr td{
+            padding-left: 1.4em;
+        }
+        #notice_table tbody th {
+            font-size:0.8em;
+        }
+    </style>
+    <title>index</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- header/footer영역 공통사용 -->
+        <div id="header" class="clear">
+            <div id="pos_rel">
+                <div id="left_menubar">
+                    <a href="#"><span class="icon"><img src="../img/menubar2.png" alt="메뉴 아이콘" class="img1"></span></a>
+                </div>
+                <div id="logo_section">
+                    <span><a href=""><img src="../img/logo.jpg" alt="로고 이미지"></a></span>
+                </div>
+                <div id="right_menubar">
+                    <div>
+                        <a href="#"><span class="icon"><img src="../img/search.png" alt="검색 아이콘"></span></a>
+                        <a href="#"><span class="icon"><img src="../img/cart.png" alt="장바구니 아이콘"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="content">
+            <div id="notice_heading">
+              <a href="#"><img src="../img/left_arrow.png" alt="왼쪽 화살표"><span id="heading_title" class="heading_title">
+                         <h2>공지사항</h2></span></a>
+             </div>
+
+             <div id="notice_table">
+                <table border="1" width="100%" align="center">
+                    <thead>
+                        <tr>
+                            <td width="80%" align="center">글제목</td>
+                            <td width="20%" align="center">조회</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="80%">공지사항 글 내용에 해당됩니다.</td>
+                            <th align="center">조회수</th>
+                        </tr>
+                        <tr>
+                            <td width="80%">공지사항 글 내용에 해당됩니다.</td>
+                            <th align="center">조회수</th>
+                        </tr>
+                        <tr>
+                            <td width="80%">공지사항 글 내용에 해당됩니다.</td>
+                            <th align="center">조회수</th>
+                        </tr>
+                        <tr>
+                            <td width="80%">공지사항 글 내용에 해당됩니다.</td>
+                            <th align="center">조회수</th>
+                        </tr>
+                        <tr>
+                            <td width="80%">공지사항 글 내용에 해당됩니다.</td>
+                            <th align="center">조회수</th>
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="footer">
+        <div id="table_section">
+            <table cellspacing="5">
+
+                <thead>
+                    <tr>
+                        <th>회사소개</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>상호명</th>
+                        <td>(주)웰컴</td>
+                    </tr>
+                    <tr>
+                        <th>대표이사</th>
+                        <td>박민성</td>
+                    </tr>
+                    <tr>
+                        <th>대표번호</th>
+                        <td>1541-1339</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>서울시 강남구 강남대로77길 55 에이프로스퀘어 3층</td>
+                    </tr>
+                    <tr>
+                        <th>사업자등록번호</th>
+                        <td>123-88-12345</td>
+                    </tr>
+                    <tr>
+                        <th>통신판매업신고</th>
+                        <td>제 2020-서울서초-12345호</td>
+                    </tr>
+                    <tr>
+                        <th>개인정보관리책임자</th>
+                        <td>정경락</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+        <address>CopyRight&copy; 2020 웰컴. All rights reserved.</address>
+    </div>
+</div>
+</body>
+
+</html>
