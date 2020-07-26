@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--페이지 설정 부분-->
+
+<head>
+    <meta charset="utf-8" />
+    <!--IE호환성 보기 모드 금지-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--스마트 디바이스에서의 해상도 균일화 처리-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    #container {
+        width: 360px;
+        min-height:500px;
+        margin: auto;
+
+    }
+
+    /* 상단 영역 */
+    #header {
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        position: fixed;
+
+    }
+
+
+    #header div {
+        width: 100%;
+        float: left;
+        margin: auto;
+    }
+
+    #header div span {
+        display: block;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    #header div .logo {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #header img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #header .icon {
+        width: 30px;
+    }
+
+
+    #header #left_menubar {
+        position: absolute;
+        left: 5%;
+        top: 11px;
+        width: 33%;
+    }
+
+    #header #logo_section {
+        width: 30%;
+        position: absolute;
+        left: 30%;
+        top: 1px;
+    }
+
+    #header #right_menubar {
+        width: 33%;
+        position: absolute;
+        right: 3%;
+        top: 12px;
+
+    }
+
+    #header #right_menubar a {
+        display: inline-block;
+        width: 47%;
+    }
+
+    #header a {
+        display: inline-block;
+        text-decoration: none;
+    }
+
+
+    /* 헤더 float 마감제 */
+    .clear {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+
+    /* 내용 영역 */
+    #content {
+        padding-top:70px;
+        width: 100%;
+        min-height: 300px;
+    }
+
+    #content-top{
+        width:100%;
+
+    }
+
+
+    #content-top #photo {
+        width: 300px;
+        margin:auto;
+        border: 1px solid #111;
+    }
+
+    #content-top p {
+  padding: 10px;
+  text-align: left;
+  font-family: "helvetica";
+  font-weight: bold;
+  font-size: 15px;
+  color: #111;
+  text-decoration:
+
+}
+
+    #content-top span{
+        width: 100%;
+    }
+
+
+    #content-top img{
+        width: 100%;
+        margin: auto;
+    }
+
+
+    #content-top a{
+        display: block;
+        border: 10px;
+        color: #111;
+
+    }
+
+
+/* content mid */
+
+
+
+
+  #content-mid{
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-size: 12px;
+  list-style: none;
+  text-decoration:none;
+
+}
+
+#gallery {
+    width: 100%;
+      list-style: none;
+  text-decoration:none;
+  margin: 15px;
+  text-align: center;
+}
+
+
+
+ #content-mid #gallery li {
+  width: 30%;
+  float: left;
+
+}
+
+#content-mid #gallery li a {
+  display: block;
+  width: auto;
+  padding: 10px;
+}
+
+
+#gallery li a span{
+  display: block;
+  width: auto;
+
+}
+#gallery .thumb img {
+  width: 100%;
+  height: 50px;
+}
+
+.clear {
+    clear:'';
+    display: block;
+    clear: both;
+    float: none;
+}
+
+
+
+    /* bottom */
+    #footer {
+        width: 100%;
+        background-color: #262626;
+        min-height: 20px;
+    }
+
+    #footer #table_section {
+        width: 100%;
+        margin: auto;
+        width: 80%;
+    }
+
+    #footer table {
+        width: 100%;
+        font-size: 0.7em;
+        font-family: 'Helvetica', '맑은 고딕', 'sans-serif';
+        color: #fff;
+        line-height: 20px;
+    }
+
+    #footer table th {
+        width: 35%;
+        text-align: left;
+    }
+
+    #footer table td {
+        width: 65%;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    #footer address {
+        margin: auto;
+        display: block;
+        color: #fff;
+        text-align: middle;
+        text-decoration: none;
+        font-style: normal;
+        font-size: 10px;
+    }
+
+
+    #copyright{
+        width:auto;
+        text-align: center;
+        height: 20px;
+        }
+    </style>
+    <title>좋은컴퓨터 Wellcom</title>
+</head>
+
+<body>
+    <div id="container">
+        <!-- header/footer영역 공통사용 -->
+        <div id="header" class="clear">
+            <div id="pos_rel">
+            <div id="left_menubar">
+                <a href="#"><span class="icon"><img src="img/menu.png" alt="메뉴 아이콘" class="img1"></span></a>
+            </div>
+            <div id="logo_section">
+                <span><a href=""><img src="img/logo.jpg" alt="로고 이미지"></a></span>
+            </div>
+            <div id="right_menubar">
+                <div>
+                    <a href="#"><span class="icon"><img src="img/search.png" alt="검색 아이콘"></span></a>
+                    <a href="#"><span class="icon"><img src="img/cart.png" alt="장바구니 아이콘"></span></a>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+          <div id="content">
+            <div id="content-top">
+
+                <div id="photo" class="topimage1">
+                    <a href="#">
+                        <span class="thumb"><img src="img/pcimg.jpeg"></span>
+              <p>상품정보요약<br/> ex)고사양 조립PC 배틀그라운드 풀옵션</p></a>
+                </div>
+                <br/>
+              <div id="photo" class="topimage1">
+                    <a href="#">
+                        <span class="thumb"><img src="img/pcimg.jpeg"></span>
+              <p>상품정보요약<br/> ex)고사양 조립PC 배틀그라운드 풀옵션</p></a>
+                </div>
+                <br/>
+                <div id="photo" class="topimage1">
+                    <a href="#">
+                        <span class="thumb"><img src="img/pcimg.jpeg"></span>
+              <p>상품정보요약<br/> ex)고사양 조립PC 배틀그라운드 풀옵션</p></a>
+                </div>
+            </div>
+            <br />
+            <br />
+
+
+
+<div id="content-mid" class="clear">
+<div id="gallery1">
+<ul id="gallery">
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb1.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+<li>
+    <a href="#"><span class="thumb"><img src="img/thumb2.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb3.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+</ul>
+</div>
+<div id="gallery2">
+<ul id="gallery">
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb4.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+<li>
+    <a href="#"><span class="thumb"><img src="img/thumb5.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb1.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+</ul>
+</div>
+<div id="gallery3">
+<ul id="gallery">
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb3.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+<li>
+    <a href="#"><span class="thumb"><img src="img/thumb1.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+  <li>
+    <a href="#"><span class="thumb"><img src="img/thumb2.jpg"/></span>
+    <span class="title">판매정보</span>
+    </a>
+  </li>
+</ul>
+</div>
+
+
+
+
+
+</div>
+
+<br/>
+<br/>
+
+
+
+
+            <div id="content-bottom">
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="footer" class="clear">
+            <div id="table_section">
+            <table cellspacing="10">
+
+                <thead>
+                    <tr height="20">
+                        <th width="180">회사소개</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>상호명</th>
+                        <td>(주)웰컴</td>
+                    </tr>
+                    <tr>
+                        <th>대표이사</th>
+                        <td>박민성</td>
+                    </tr>
+                    <tr>
+                        <th>대표번호</th>
+                        <td>1541-1339</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>서울시 강남구 강남대로77길 55 에이프로스퀘어 3층</td>
+                    </tr>
+                    <tr>
+                        <th>사업자등록번호</th>
+                        <td>123-88-12345</td>
+                    </tr>
+                    <tr>
+                        <th>통신판매업신고</th>
+                        <td>제 2020-서울서초-12345호</td>
+                    </tr>
+                    <tr>
+                        <th>개인정보관리책임자</th>
+                        <td>정경락</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+            </div>
+            <div id="copyright">
+            <address>Copyright&copy; 2020 웰컴. All rights reserved.</address>
+        </div>
+        </div>
+</body>
+
+</html>
