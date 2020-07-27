@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,
+	minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<!--<link rel="stylesheet" href="plugins/.css" />-->
+	<title>jQuery</title>
+	<style type="text/css">
+	</style>
+</head>
+
+<body>
+	<div class="list-group"></div>
+	<script type="text/x-handlebars-template" id="list-item-tmpl">
+		{{#item}}
+		<form id="{{title}}" name="{{title}}">
+		<h3> {{question}} </h3>
+		<input type="radio" name="{{title}}" value="v1"> {{answer.v1}} <br />
+		<input type="radio" name="{{title}}" value="v2"> {{answer.v2}} <br />
+		<input type="radio" name="{{title}}" value="v3"> {{answer.v3}} <br />
+		<input type="radio" name="{{title}}" value="v4"> {{answer.v4}} <br />
+		<input type="hidden" name="{{title}}" value="{{result}}">
+		<input type="submit" name="submit" value="정답확인">
+		</form>
+		{{/item}}
+	</script>
+	<!-- jQuery Script CND방식 참조 -->
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="plugins/handlebars/handlebars-v4.0.11.js"></script>
+	<script src="quiz.js"></script>
+	<script type="text/javascript">
+	$(function() {
+		var template = Handlebars.compile($("#list-item-tmpl").html());
+		var html = template(data);
+		$(".list-group").append(html);
+
+		$("form").on("submit", function(e) {
+			e.preventDefault();
+			var answer_value = $("input:radio[name=" + this.name + "]:checked").val();
+
+			var result_value = $("input:hidden[name=" + this.name + "]").val();
+			if(answer_value == "v" + result_value)
+			{
+				alert('정답입니다');
+			}
+			else
+			{
+				alert('틀렸습니다');
+			}
+		});
+	});
+
+	function myfunction(title, result) {
+		var name = $(this).attr('name');
+		var val = document.forms[title].value;
+		alert(name);
+		// alert("val :" + val);
+		// alert("title : " + title);
+		// alert("this.name : " + this.name);
+		// alert("result : " + result);
+	}
+	</script>
+</body>
+
+</html>
