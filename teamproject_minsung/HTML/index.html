@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--페이지 설정 부분-->
+<head>
+    <meta charset="utf-8"/>
+    <!--IE호환성 보기 모드 금지-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--스마트 디바이스에서의 해상도 균일화 처리-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="../CSS/reset.css">
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+        /* 상단 영역 */
+        #header {
+            width: 100%;
+            height: 55px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 111;
+        }
+
+        #header #pos_rel {
+            position: relative;
+        }
+
+        #header div {
+            width: 100%;
+            float: left;
+            margin: auto;
+        }
+
+        #header div span {
+            display: block;
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #header div .logo {
+            display: inline-block;
+            width: 100%;
+        }
+
+        #header img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #header .icon {
+            width: 30px;
+        }
+
+        #header #left_menubar {
+            position: absolute;
+            left: 5%;
+            top: 11px;
+            width: 33%;
+        }
+
+        #header #logo_section {
+            width: 33%;
+            position: absolute;
+            left: 30%;
+            top: 1px;
+        }
+
+        #header #logo_section span a {
+            width: 60px;
+            height: auto;
+        }
+
+        #header #right_menubar {
+            width: 33%;
+            position: absolute;
+            right: 3%;
+            top: 12px;
+
+        }
+
+        #header #right_menubar a {
+            display: inline-block;
+            width: 47%;
+        }
+
+        #header a {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        /* S CONTENT */
+        #content {
+            padding: 55px 0 20px;
+        }
+
+        .box {
+            padding: 20px 20px 0;
+        }
+
+        .p-list {
+            margin-bottom: 30px;
+        }
+
+        .p-list .p-item {
+            width: 100%;
+            height: auto;
+            border: 1px solid #e7e7e7;
+            margin-bottom: 20px;
+        }
+
+        .p-list .p-item .img {
+            position: relative;
+            padding: 20px 20px 14px;
+        }
+
+        .p-list .p-item .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .p-list .p-item .info {
+            width: 100%;
+            height: 60px;
+        }
+
+        .p-list .p-item .title {
+            line-height: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .p-list .p-item .desc {
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .p-list-sm {
+            position: relative;
+            margin-bottom: 70px;
+        }
+
+        .p-list-sm .p-item-sm {
+            float: left;
+            width: calc(33% - 13px);
+            margin-right: 20px;
+        }
+
+        .p-list-sm .p-item-sm:last-child {
+            margin-right: 0;
+        }
+
+        .p-list-sm .p-item-sm .img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .p-list-sm .p-item-sm .img .title {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #ffffff;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+        }
+
+        .p-list-sm .p-item-sm .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .p-list-sm .p-item-sm .value {
+            width: 100%;
+            text-align: center;
+            padding: 6px 0;
+            border: 1px solid #888888;
+            font-weight: bold;
+        }
+
+        .p-list-sm .btn-wrap {
+            position: absolute;
+            bottom: -44px;
+            right: 0;
+        }
+
+        .p-list-sm .btn-wrap a {
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #f2f2f2;
+            color: #262626;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        .i-list .i-item {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .i-list .i-item .img {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 10px;
+            top: 10px;
+        }
+
+        .i-list .i-item .img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .i-list .i-item .title {
+            padding: 23px 20px 0 105px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .i-list .i-item .desc {
+            padding-left: 105px;
+            padding-right: 20px;
+            font-size: 15px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* E CONTENT */
+
+        /* 헤더 float 마감제 */
+        .clear::after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+
+        /* 내용 영역 */
+        #content {
+            width: 100%;
+            min-height: 500px;
+        }
+
+        /* 하단 영역 */
+        #footer {
+            width: 100%;
+            background-color: #262626;
+            min-height: 12%;
+        }
+
+        #footer #table_section {
+            padding-left: 50px;
+            padding-top: 30px;
+            width: 80%;
+        }
+
+        #footer table {
+            width: 100%;
+            font-size: 0.7em;
+            font-family: 'Helvetica', '맑은 고딕', 'sans-serif';
+            color: #fff;
+            line-height: 20px;
+        }
+
+        #footer table th {
+            width: 35%;
+            text-align: left;
+        }
+
+        #footer table td {
+            width: 65%;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #footer address {
+            background-color: #FCB329;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+            padding: 16px 0 20px 0;
+        }
+    </style>
+    <title>index</title>
+</head>
+
+<body>
+<div id="container">
+    <!-- header/footer영역 공통사용 -->
+    <div id="header" class="clear">
+        <div id="pos_rel">
+            <div id="left_menubar">
+                <a href="#"><span class="icon"><img src="../menubar2.png" alt="메뉴 아이콘" class="img1"></span></a>
+            </div>
+            <div id="logo_section">
+                <span><a href="#"><img src="../img/logo.png" alt="로고 이미지"></a></span>
+            </div>
+            <div id="right_menubar">
+                <div>
+                    <a href="#"><span class="icon"><img src="../img/search.png" alt="검색 아이콘"></span></a>
+                    <a href="#"><span class="icon"><img src="../img/cart.png" alt="장바구니 아이콘"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div class="box">
+            <div class="p-list">
+                <div class="p-item">
+                    <div class="img"><img src="../img/intel_sample.jpg" alt="이벤트/행사 상품이미지1"></div>
+                    <div class="info">
+                        <p class="title">상품 정보 요약</p>
+                        <p class="desc">ex)고사양 조립 PC 배틀그라운드 풀옵션</p>
+                    </div>
+                </div>
+                <div class="p-item">
+                    <div class="img"><img src="../img/intel_sample.jpg" alt="이벤트/행사 상품이미지1"></div>
+                    <div class="info">
+                        <p class="title">상품 정보 요약</p>
+                        <p class="desc">ex)고사양 조립 PC 배틀그라운드 풀옵션</p>
+                    </div>
+                </div>
+                <div class="p-item">
+                    <div class="img"><img src="../img/intel_sample.jpg" alt="이벤트/행사 상품이미지1"></div>
+                    <div class="info">
+                        <p class="title">상품 정보 요약</p>
+                        <p class="desc">ex)고사양 조립 PC 배틀그라운드 풀옵션</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="p-list-sm">
+                <ul class="clear">
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="인기상품1">
+                            <div class="title">인기상품1</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="인기상품1">
+                            <div class="title">인기상품2</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="인기상품1">
+                            <div class="title">인기상품3</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn-wrap"><a href="#" class="btn-more">더보기</a></div>
+            </div>
+            <div class="p-list-sm">
+                <ul class="clear">
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="추천상품1">
+                            <div class="title">추천상품1</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="추천상품2">
+                            <div class="title">추천상품2</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="추천상품3">
+                            <div class="title">추천상품3</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn-wrap"><a href="#" class="btn-more">더보기</a></div>
+            </div>
+            <div class="p-list-sm">
+                <ul class="clear">
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="신상품1">
+                            <div class="title">신상품1</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="신상품2">
+                            <div class="title">신상품2</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                    <li class="p-item-sm">
+                        <div class="img">
+                            <img src="../img/amd_sample.jpg" alt="신상품3">
+                            <div class="title">신상품3</div>
+                        </div>
+                        <div class="value">
+                            <span>판매가격</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="btn-wrap"><a href="#" class="btn-more">더보기</a></div>
+            </div>
+        </div>
+        <div class="box">
+            <ul class="i-list">
+                <li class="i-item">
+                    <div class="img"><img src="../img/amd_sample.jpg" alt="이슈 헤드라인1"></div>
+                    <div class="title">이슈 헤드라인1</div>
+                    <div class="desc">내용 요약 타이틀1</div>
+                </li>
+                <li class="i-item">
+                    <div class="img"><img src="../img/amd_sample.jpg" alt="이슈 헤드라인2"></div>
+                    <div class="title">이슈 헤드라인2</div>
+                    <div class="desc">내용 요약 타이틀2</div>
+                </li>
+                <li class="i-item">
+                    <div class="img"><img src="../img/amd_sample.jpg" alt="이슈 헤드라인3"></div>
+                    <div class="title">이슈 헤드라인3</div>
+                    <div class="desc">내용 요약 타이틀3</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="table_section">
+            <table cellspacing="5">
+
+                <thead>
+                <tr>
+                    <th>회사소개</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>상호명</th>
+                    <td>(주)웰컴</td>
+                </tr>
+                <tr>
+                    <th>대표이사</th>
+                    <td>박민성</td>
+                </tr>
+                <tr>
+                    <th>대표번호</th>
+                    <td>1541-1339</td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>서울시 강남구 강남대로77길 55 에이프로스퀘어 3층</td>
+                </tr>
+                <tr>
+                    <th>사업자등록번호</th>
+                    <td>123-88-12345</td>
+                </tr>
+                <tr>
+                    <th>통신판매업신고</th>
+                    <td>제 2020-서울서초-12345호</td>
+                </tr>
+                <tr>
+                    <th>개인정보관리책임자</th>
+                    <td>정경락</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </div>
+        <address>CopyRight&copy; 2020 웰컴. All rights reserved.</address>
+    </div>
+</div>
+</body>
+
+</html>
