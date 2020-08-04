@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* 내용 영역 */
+
+#footer {
+    margin-top:0px;
+}
+#content {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 0px;
+    margin-bottom: -20px;
+}
+
+
+#account {
+    width: 80%;
+    height: 30px;
+    border-bottom: 1px solid #222;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+#accountA {
+    width: 100%;
+    height: 100%;
+    display:inline-block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.accA {
+    text-align: center;
+    margin:auto;
+    width: 80%;
+    height: 35px;
+    font-size: 18px;
+
+    }
+
+.accA a{
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+
+
+
+
+
+
+
+

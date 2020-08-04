@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+#content {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 500px;
+}
+
+#content .table {
+    text-align: center;
+    font-size: 12px;
+}
+
+#content .table tbody tr td:nth-child(2) {
+    text-align: left;
+}
+
+#content #search {
+    text-align: right;
+    margin: 0 5px;
+}
+
+#content #write {
+    text-align: right;
+    margin: 0 5px;
+}
+
+#content .board_heading {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 8px;
+}
+
+.table-responsive .label {
+    margin-left: 4px;
+}
+
+.table-responsive tr td:first-child {
+    min-width: 50px;
+    max-width: 20%;
+}
+
+.table-resposive .desc {
+    width: 60%;
+
+}
+
+.table-responsive tr td:last-child {
+    min-width: 50px;
+    max-width: 20%;
+}
+
+#content #writer {
+    text-align: right;
+    margin: 5px;
+}

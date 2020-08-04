@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+#content .table {
+    font-size: 12px;
+}
+
+#content .table th {
+    font-size: 14px;
+}
+
+#content .table .glyphicon-picture {
+    font-size: 26px;
+}
+
+#content .table thead td {
+    width: 100%;
+}
+
+#content .board_heading {
+
+    text-align: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 8px;
+}
+
+#content #board_write {
+    width: 100%;
+}
+
+#content #write_content {
+    min-height: 500px;
+    width: 95%;
+    margin: 0 10px;
+    border: 1px solid #eee;
+}
+
+.write_button {
+    margin:5px;
+}
+.write_button .btn {
+    width: 48%;
+}

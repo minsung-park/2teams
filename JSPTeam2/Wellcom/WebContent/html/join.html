@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/join.css">
+    <title>회원가입</title>
+</head>
+
+<body>
+    <div id="container">
+        <button class="onTop" id="onTop"><img src="../img/onTop.png"> </button>
+        <!-- header/footer영역 공통사용 -->
+        <div id="header" class="row box">
+            <div class="col-xs-4 header_height">
+                <a id="menu" href="#"><img src="../img/menubar2.png" alt=""></a>
+            </div>
+            <!-- 모달로 꾸밀 박스 -->
+            <div class="gray_layer" id="gray_layer"></div>
+            <div class="over_layer" id="over_layer">
+                <div id="toggle_menu">
+                    <span id="iconalign" class="glyphicon glyphicon-remove-circle"></span>
+                    <a href="login.html" id="user_name" class="user_name">로그인을 해주세요</a>
+                    <div id="button_align">
+                        <a href="login.html">
+                            <button type="login" id="login" class="login btn btn-primary" value="로그인" style=font-size:12px;>로그인</button></a>
+                        <a href="join.html">
+                            <button type="submit" id="join" class="join btn btn-primary" value="회원가입" style=font-size:12px;>회원가입</button></a>
+                    </div>
+                </div>
+                <div class="menucategory panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a class="accordion-toggle downcategory" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">웰컴이 추천하는 조립 PC<span class="glyphicon"></span>
+                                </a></h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">완제품 이벤트 PC</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">특가 상품</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a class="accordion-toggle downcategory" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">조립 PC 부품<span class="glyphicon"></span></a></h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">CPU</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">그래픽카드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">메인보드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">메모리카드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">기타 부품</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="category">
+                        <li><a href="board.html" class="board">커뮤니티</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="board_notice.html" class="board">공지사항</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="board_event.html" class="board">이벤트</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="customer_service.html" class="board">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!---->
+            <div class="col-xs-4 header_height">
+                <a id="logo_section" href="../index.jsp"><img src="../img/logo.png" alt=""></a>
+            </div>
+            <div class="col-xs-2 header_height">
+                <a id="search" href="#"><img src="../img/search.png" alt=""></a>
+            </div>
+            <div class="col-xs-2 header_height">
+                <a id="cart" href="cart.html"><img src="../img/cart.png" alt=""></a>
+            </div>
+            <!-- search -->
+            <div class="search_toggle" id="search_toggle">
+                <div class="input-group" id="search_toggle_input_group">
+                    <input type="text" class="form-control" id="search_input">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" id="search_button">검색</button>
+                    </span>
+                </div>
+            </div><!-- search end -->
+        </div>
+        <div id="content">
+            <div id="title_area">
+                <h2>join us</h2>
+            </div>
+            <div id="progress">
+                <ul>
+                    <li class="done">약관동의</li><!--
+                     --><li class="done">정보입력</li><!--
+                 --><li class="done">가입완료</li>
+                </ul>
+            </div>
+            <div id="agree">
+                <div id="agree_all">
+                    <h3>전체 동의</h3>
+                    <span class="location">
+                        <input type="checkbox" id="all_check">
+                        <label for="">
+                            이용약관 및 개인정보수집 및 이용,<br>
+                            쇼핑정보 수신(선택)에 모두 동의합니다.
+                        </label>
+                    </span>
+                </div>
+                <nav class="list-group">
+                    <!-- 목록의 아이템 -->
+                    <!-- 목록의 아이템 + badge 사용 -->
+                    <div class="list-group-item">
+                        <input type="checkbox" id="ok_no1" class="check" value="1">
+                        <label for="ok_no">
+                            이용약관 동의
+                            <span class="label label-danger">필수</span>
+                        </label>
+                        <button id="agree_page_Btn" class="btn">전체 보기</button>
+                        <!-- 회원가입 확인 Modal-->
+                        <div class="modal fade" id="pop_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close x_hide" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </button>
+                                        <h3 class="modal-title" id="exampleModalLabel">이용약간 동의</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="contents">
+                                            <p>
+                                                <h4>제1조 목적</h3><br>
+                                                    이 약관은 주식회사 에버프리(전자상거래 사업자)가 운영하는 에버프리 (이하 “몰”)에서 제공하는 인터넷 관련 서비스(이하 “서비스)를 이용함에 있어 몰과 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다.
+                                                    PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.
+                                            </p><br>
+                                            <p>
+                                                <h4>제 2 조 (정의)</h4><br>
+                                                ① '몰'이란 회사가 설립 한 가상의 사업장으로 컴퓨터 및 정보 통신 시설을 이용하여 상품이나 서비스를 교환하여 이용자에게 상품과 서비스를 제공하는 것을 말합니다. 이 용어는 사이버 몰을 운영하는 회사로 정의 될 수도 있습니다.
+                                                ② '이용자'란이 약관에 따라 '몰'이 제공하는 서비스를 이용하기 위해 '몰'에 접속 한 회원 및 비회원을 말합니다.
+                                                ③ '회원'은 회원 가입을하여 '몰'이 제공하는 서비스를 이용하는 이용자를 말합니다.
+                                                ④ '비회원'이란 '몰'이 제공하는 서비스를 가입없이 사용하는 이용자를 말합니다.
+                                            </p><br>
+                                            <p>
+                                                <h4>3 조 (이용 약관의 표시)</h4><br>
+                                                ① "몰"은 이용자가 쉽게 알 수 있도록 본 약관의 내용, 회사 명 및 대표자, 사업장 (고객 불만 처리 주소 등)을 표시하여야합니다. ), 전화 번호, 팩스 번호, 이메일 주소, 사업자 라이센스 번호, 전자 상거래 허가 번호 및 '몰'메인 페이지에있는 개인 정보 관리자의 이름. 이 약관의 내용 만 링크 페이지를 통해 표시 할 수 있습니다.
+                                                ② '몰'은 본 약관에 대한 최종 동의에 앞서 별도의 링크 또는 팝업 화면을 제공하여 해지 권한, 배송 책임, 환불 조건 및 기타 중요한 사항에 대한 사용자의 확인을 얻습니다.
+                                                ③ "몰"은 "전자 상거래 소비자 보호에 관한 법률", "약관 규정", "전자 상거래 및 전자 문서에 관한 프레임 워크 법", "전자 금융 거래"등 관련 법령을 위반하지 않고 허용 범위 내에서 수정을 할 수 있습니다. 법」, 「전자 서명법」, 「정보 통신망 이용 촉진에 관한 법률」, 「문간 판매법」, 「소비자에 관한 프레임 워크 법」및 그 밖의 관련 소비자 보호법.
+                                                ④ "몰"은 효력 발생 일과 약관의 변경 사유를 명시하고 효력 발생 일 전날까지 효력 발생 일 전 7 일 동안 초기 화면에 게시하여야합니다.
+                                                개정이 사용자의 불이익으로 수정 된 경우, '몰'은 통지를 위해 최소 30 일의 유예 기간을 부여해야합니다. 이 경우 '몰'은 '이해하기 쉬운'변경 사항을 '이해하기 쉬운'방식으로 명확히해야합니다.
+                                                ⑤``몰 ''이 약관에 대한 수정을하는 경우, 수정 된 약관은 발효 일 이후에 체결 된 계약에만 적용되며, 효력 발생 일 이전에 체결 된 모든 계약은 기존 약관에 따라 유지됩니다. 단, 계약서에 이미 서명 한 이용자가 개정을 원할 경우에는 ③ 항에 기재된 통고 기간 내에 이용자는 '몰'에게 의도를 송부하고 '몰'로부터 동의를 얻을 수 있습니다. 그에 따라 적용됩니다.
+                                                ⑥ 본 약관에 명시되고 해석되지 않은 정보는 공정 거래위원회가 제공하는 전자 상거래 거래 지침 및 관련 소비자 보호법 및 기타 해당 소비자 보호법 및 T & C 법 규정에 따라야합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn" id="modalY" href="#">동의합니다</a>
+                                        <button class="btn" type="button" data-dismiss="modal">취소</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="checkbox" id="ok_no2" class="check" value="1">
+                        <label for="ok_no">
+                            개인정보 수집 동의
+                            <span class="label label-danger">필수</span>
+                        </label>
+                        <button id="agree_page_Btn2" class="btn">전체 보기</button>
+                        <!-- 회원가입 확인 Modal-->
+                        <div class="modal fade" id="pop_Modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close x_hide" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </button>
+                                        <h3 class="modal-title" id="exampleModalLabel">개인정보 수집 동의</h5>
+                                    </div>
+                                    <div class="modal-body">내용 입력 !!</div>
+                                    <div class="modal-footer">
+                                        <a class="btn" id="modalY2" href="#">동의합니다</a>
+                                        <button class="btn" type="button" data-dismiss="modal">취소</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <input type="checkbox" id="ok_no3" class="check" value="1">
+                        <label for="ok_no">
+                            개인정보 수집 동의
+                            <span class="label label-warning">선택</span>
+                        </label>
+                        <button id="agree_page_Btn3" class="btn">전체 보기</button>
+                        <!-- 회원가입 확인 Modal-->
+                        <div class="modal fade" id="pop_Modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <button type="button" class="close x_hide" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        </button>
+                                        <h3 class="modal-title" id="exampleModalLabel">개인정보 수집 동의</h5>
+                                    </div>
+                                    <div class="modal-body">내용 입력 !!</div>
+                                    <div class="modal-footer">
+                                        <a class="btn" id="modalY3" href="#">동의합니다</a>
+                                        <button class="btn" type="button" data-dismiss="modal">취소</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="agree_button">
+                        <button type="submit" id="button_next"><a href="">다음</a></button>
+                        <!--
+                --><button type="submit" id="button_cancel"><a href="login.html">취소</a></button>
+                    </div>
+                    <!-- 목록의 아이템 + badge 사용 -->
+                    <!-- <a href="#" class="list-group-item">
+                    개인정보처리방침 동의
+                    <span class="label label-danger">필수</span>
+                    <span class="badge">전체보기</span>
+                </a> -->
+                    <!-- 목록의 아이템 + badge 사용 + label 사용 -->
+                    <!-- <a href="#" class="list-group-item">
+                    쇼핑정보 수신 동의
+                    <span class="label label-warning">선택</span>
+                    <span class="badge">전체보기</span>
+                </a> -->
+                </nav>
+            </div>
+            <div id="footer">
+                <div id="table_section clear">
+                    <table cellspacing="5">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <h4 class="inc">㈜웰컴</h4>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>고객센터 : 1541-1339</td>
+                            </tr>
+                            <tr>
+                                <td>사업자등록번호 :
+                                    123-88-12345</td>
+                            </tr>
+                            <tr>
+                                <td>통신판매업신고 :
+                                    제 2020-서울서초-12345호</td>
+                            </tr>
+                            <tr>
+                                <td>서울시 강남구 강남대로77길 55 에이프로스퀘어 3층</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+                </div>
+                <address>CopyRight&copy; 2020 웰컴. All rights reserved.</address>
+            </div>
+        </div>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(function() {
+            $("#menu").click(function(e) {
+                e.preventDefault();
+                $("#gray_layer").fadeIn(300);
+                $("#over_layer").fadeIn(200);
+                $("body").css('overflow-y', 'hidden');
+
+            }); // end of $("#menu").click(function(){
+
+            $(".glyphicon-remove-circle").click(function() {
+                $("#gray_layer").fadeOut(300);
+                $("#over_layer").fadeOut(200);
+                $("body").css('overflow-y', 'auto');
+            }); // end of #("glyphicon-remove-circle").click(function(){
+
+            $("#gray_layer").click(function() {
+                $(this).fadeOut(300);
+                $("#over_layer").fadeOut(200);
+                $("body").css('overflow-y', 'auto');
+            }); // end of $("#background").click(function(){
+
+            // search 박스 //
+            $('#search').click(function(e) {
+                e.preventDefault();
+
+                $('#search_toggle').toggle(0);
+                if ($('#search_toggle').css('display') == 'none') {
+                    $('#search_input').val(null);
+                };
+            }); // end of $('#search').click(function() {
+
+            $('#search_button').click(function(e) {
+                e.preventDefault();
+
+                if ($('.form-control').val() == '') {
+                    alert('검색어를 입력해 주세요');
+                } else {
+                    var link = "./HTML/product.html"
+                    window.location.href = link;
+                }
+            }); // end of $('.btn-primary').click(function(e) {
+
+            $("#all_check").change(function() {
+                $(".check").prop('checked', $(this).prop('checked'));
+            });
+
+            $(".x_hide").click(function() {
+                $(".modal-backdrop").fadeOut(200);
+                $('#pop_Modal, #pop_Modal2, #pop_Modal3').modal("hide");
+            });
+
+            $('#agree_page_Btn').click(function(e) {
+                e.preventDefault();
+                $('#pop_Modal').modal("show");
+
+                $("#modalY").click(function() {
+                    $("#ok_no1").prop('checked', true);
+                    $('#pop_Modal, .modal-backdrop').fadeOut(200).modal("hide");
+                });
+
+            });
+
+            $('#agree_page_Btn2').click(function(e) {
+                e.preventDefault();
+                $('#pop_Modal2').modal("show");
+
+
+                $("#modalY2").click(function() {
+                    $("#ok_no2").prop('checked', true);
+                    $('#pop_Modal2, .modal-backdrop').fadeOut(200).modal("hide");;
+
+                });
+            });
+
+
+            $('#agree_page_Btn3').click(function(e) {
+                e.preventDefault();
+                $('#pop_Modal3').modal("show");
+
+                $("#modalY3").click(function() {
+                    $("#ok_no3").prop('checked', true);
+                    $('#pop_Modal3, .modal-backdrop').fadeOut(200).modal("hide");;
+
+                });
+            });
+        });
+        </script>
+</body>
+
+</html>

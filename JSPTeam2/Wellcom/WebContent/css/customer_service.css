@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+.content-top {
+    /* background-color: red; */
+    height: 110px;
+}
+.content-middle {
+    /* background-color: blue; */
+    height: 200px;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.content-middle .middle-img{
+    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.content-middle .middle-number {
+    
+    /* background-color: cyan; */
+    margin-bottom: 20px;
+}
+
+.content-middle .middle-time {
+    /* background-color: gray; */
+    height: 60px;
+}
+
+.middle-img {
+    /* 위아래 / 좌우 */
+    margin: 0 auto;
+}
+
+.content-bottom {
+    padding-top: 10px;
+    /* background-color: green; */
+    height: 370px;
+    font-size: 26px;
+}
+
+.content-bottom .bottom-chat {
+    /* background-color: darkorange; */
+    height: 90px;
+    width: 320px;
+    margin: 20px auto;
+    border: 2px solid #264695;
+}
+
+.content-bottom .bottom-write {
+    width: 320px;
+    height: 90px;
+    margin: 20px auto;
+    border: 2px solid #264695;
+}
+
+.content-bottom .bottom-read {
+    width: 320px;
+    height: 90px;
+    margin: 20px auto;
+    border: 2px solid #264695;
+}
+.content-bottom .chat-image {
+    width: 240px;
+    height: 70px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    /* background-color: crimson; */
+}
+
+.content-bottom .chat-image img {
+   width: 80px;
+}
+
+.content-bottom .chat-image a:hover{
+    text-decoration: none;
+}
+
+.chat-text {
+    /*  background-color: darkmagenta;*/
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+}
+
+.content-bottom .write-image {
+    width: 240px;
+    height: 70px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    /* background-color: crimson; */
+}
+
+.bottom-write .write-image img {
+    width: 80px;
+}
+
+.content-bottom .read-image {
+    width: 240px;
+    height: 70px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 40px;
+    /* background-color: crimson; */
+}
+
+.bottom-read .read-image img {
+    width: 80px;
+}
+

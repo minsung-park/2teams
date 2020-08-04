@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/* 내용 영역 */
+
+/* 다른 CSS 파일에서 영향받는 항목 초기화*/
+#footer {
+    margin-top:0px;
+}
+
+#container .glyphicon {
+    padding-left:0px;
+}
+
+/* 본 CSS작업 시작 */
+
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+/* 현재 페이지 내용 안내해주는 헤더 */
+#content_header {
+    width: 80%;
+    height: 30px;
+    border-bottom: 1px solid #222;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+.breadcrumb {
+
+    background-color: #fff;
+
+}
+
+.breadcrumb>li+li:before {
+    content: ">\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}
+
+/* 현재 페이지 메인 CSS */
+
+#content_main {
+    width: 90%;
+    margin: auto;
+    min-height: 100px;
+}
+
+/* 상단 유저아이콘 및 구매등급 안내 CSS */
+
+#info_header{
+    width: 100%;
+    height: 100%;
+}
+
+#info_header1 {
+
+    width: 60%;
+    height: 40px;
+    padding-top: 10px;
+}
+#info_header1 #usericon{
+    height: 100%;
+    font-size: 30px;
+    float: left;
+    padding-right: 10px;
+}
+
+
+
+#info_header1 #username{
+    display: inline-block;
+}
+
+#info_header1 #usergrade{
+    display: inline-block;
+}
+
+#info_header2 {
+    width: 60%;
+    height: 30px;
+    padding-top: 10px;
+}
+
+#info_header2 #point{
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+}
+
+#info_header2 #point1 {
+    display: inline-block;
+}
+
+#info_header2 #point2 {
+    display: inline-block;
+}
+
+#info_header2 #coupon{
+    width: auto;
+    height: 100%;
+    display: inline-block;
+}
+#info_header2 #coupon1 {
+    display: inline-block;
+}
+
+#info_header2 #coupon2 {
+    display: inline-block;
+}
+
+
+/* 입력 부분 */
+
+#content_main_form {
+    padding-top:10px;
+    width:100%;
+    height:100%;
+}
+
+.clear {
+    content: '';
+    clear: both;
+    float: none;
+    display:block;
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--페이지 설정 부분-->
+
+<head>
+    <meta charset="utf-8" />
+    <!--IE호환성 보기 모드 금지-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--스마트 디바이스에서의 해상도 균일화 처리-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" />
+    <!-- 모바일 웹 페이지 설정 -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/board.css">
+    <title>커뮤니티</title>
+</head>
+
+<body>
+    <div id="container">
+        <button class="onTop" id="onTop"><img src="../img/onTop.png"> </button>
+        <!-- header/footer영역 공통사용 -->
+        <div id="header" class="row box">
+            <div class="col-xs-4 header_height">
+                <a id="menu" href="#"><img src="../img/menubar2.png" alt=""></a>
+            </div>
+            <!-- 모달로 꾸밀 박스 -->
+            <div class="gray_layer" id="gray_layer"></div>
+            <div class="over_layer" id="over_layer">
+                <div id="toggle_menu">
+                    <span id="iconalign" class="glyphicon glyphicon-remove-circle"></span>
+                    <a href="login.html" id="user_name" class="user_name">로그인을 해주세요</a>
+                    <div id="button_align">
+                        <a href="login.html">
+                            <button type="login" id="login" class="login btn btn-primary" value="로그인" style=font-size:12px;>로그인</button></a>
+                        <a href="join.html">
+                            <button type="submit" id="join" class="join btn btn-primary" value="회원가입" style=font-size:12px;>회원가입</button></a>
+                    </div>
+                </div>
+                <div class="menucategory panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a class="accordion-toggle downcategory" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">웰컴이 추천하는 조립 PC<span class="glyphicon"></span>
+                                </a></h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">완제품 이벤트 PC</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">특가 상품</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"><a class="accordion-toggle downcategory" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">조립 PC 부품<span class="glyphicon"></span></a></h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">CPU</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">그래픽카드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">메인보드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">메모리카드</a></li>
+                                </ul>
+                                <ul class="category">
+                                    <li><a href="product.html" class="board">기타 부품</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="category">
+                        <li><a href="board.html" class="board">커뮤니티</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="board_notice.html" class="board">공지사항</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="board_event.html" class="board">이벤트</a></li>
+                    </ul>
+                    <ul class="category">
+                        <li><a href="customer_service.html" class="board">고객센터</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!---->
+            <div class="col-xs-4 header_height">
+                <a id="logo_section" href="../index.jsp"><img src="../img/logo.png" alt=""></a>
+            </div>
+            <div class="col-xs-2 header_height">
+                <a id="search" href="#"><img src="../img/search.png" alt=""></a>
+            </div>
+            <div class="col-xs-2 header_height">
+                <a id="cart" href="cart.html"><img src="../img/cart.png" alt=""></a>
+            </div>
+            <!-- search -->
+            <div class="search_toggle" id="search_toggle">
+                <div class="input-group" id="search_toggle_input_group">
+                    <input type="text" class="form-control" id="search_input">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" id="search_button">검색</button>
+                    </span>
+                </div>
+            </div><!-- search end -->
+        </div>
+        <div id="content">
+            <!-- 상단 카테고리 뎁스 영역 -->
+            <div>
+                <ol class="breadcrumb">
+                    <li class="active">커뮤니티</li>
+                </ol>
+            </div>
+            <!-- 제목 영역 -->
+            <div class="board_heading">
+                <h2>커뮤니티</h2>
+            </div>
+            <!-- 게시판 본문 영역 -->
+            <!-- 게시판 공지사항 -->
+            <div class="table table_notice">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-left">공지사항</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="desc">(주)웰컴은 대한통운, 우체국 택배를 통해 배송됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">2020년 여름 휴가 안내</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">2020년 설날 연휴 안내</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">(주)웰컴은 항상 친절하겠습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">(주)웰컴 회원 이용 안내</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="more">
+                    <a href="board_notice.html"><button type="button" id="notice_more" class="btn btn-primary">더보기</button></a></div>
+            </div>
+            <!-- 게시판 이벤트 -->
+            <div class="table table_event">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-left">이벤트</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="desc">이벤트는 조기 종료될 수 있습니다.</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">(주)웰컴이 여름 휴가비 쏜다!</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">소문내고 상품 받자</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">무료 배송 이벤트</td>
+                        </tr>
+                        <tr>
+                            <td class="desc">(주)웰컴 오픈 이벤트 안내</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="more">
+                    <a href="board_event.html">
+                        <button type="button" id="event_more" class="btn btn-primary">더보기</button></a>
+                </div>
+                <!-- 게시판 자주 묻는 질문 -->
+                <div class="table table_faq">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="text-left">자주 묻는 질문</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="desc">[교환&반품]반품하고 싶어요</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">[기타]컴퓨터를 잘 모르는데 어떤 제품을 사야되나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">[배송관련]배송기간은 얼마나 되나요?</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">[취소문의]주문을 취소하고 싶어요</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">[배송관련]운송장번호가 확인되지 않아요.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="more">
+                        <a href="board_faq.html"><button type="button" id="fnq_more" class="btn btn-primary">더보기</button></a>
+                    </div>
+                </div>
+                <!-- 게시판 이벤트 -->
+                <div class="table table_qna">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <td class="text-left">문의게시판</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="desc">문의게시판</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">문의게시판</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">문의게시판</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">문의게시판 입니다</td>
+                            </tr>
+                            <tr>
+                                <td class="desc">게시판 오픈 안내</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="more">
+                        <a href="board_qna.html">
+                            <button type="button" id="event_more" class="btn btn-primary">더보기</button></a>
+                    </div>
+                </div>
+                <!-- 하단 공통 내용 -->
+                <div id="footer">
+                    <div id="table_section clear">
+                        <table cellspacing="5">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h4 class="inc">㈜웰컴</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>커뮤니티 : 1541-1339</td>
+                                </tr>
+                                <tr>
+                                    <td>사업자등록번호 :
+                                        123-88-12345</td>
+                                </tr>
+                                <tr>
+                                    <td>통신판매업신고 :
+                                        제 2020-서울서초-12345호</td>
+                                </tr>
+                                <tr>
+                                    <td>서울시 강남구 강남대로77길 55 에이프로스퀘어 3층</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <address>CopyRight&copy; 2020 웰컴. All rights reserved.</address>
+                </div>
+            </div>
+            <!-- Javascript -->
+            <script src="../assets/js/jquery.min.js"></script>
+            <script src="../assets/js/bootstrap.min.js"></script>
+            <script type="text/javascript">
+            $(function() {
+                $("#menu").click(function(e) {
+                    e.preventDefault();
+                    $("#gray_layer").fadeIn(300);
+                    $("#over_layer").fadeIn(200);
+                    $("body").css('overflow-y', 'hidden');
+
+                }); // end of $("#menu").click(function(){
+
+                $(".glyphicon-remove-circle").click(function() {
+                    $("#gray_layer").fadeOut(300);
+                    $("#over_layer").fadeOut(200);
+                    $("body").css('overflow-y', 'auto');
+                }); // end of #("glyphicon-remove-circle").click(function(){
+
+                $("#gray_layer").click(function() {
+                    $(this).fadeOut(300);
+                    $("#over_layer").fadeOut(200);
+                    $("body").css('overflow-y', 'auto');
+                }); // end of $("#background").click(function(){
+
+                // search 박스 //
+                $('#search').click(function(e) {
+                    e.preventDefault();
+
+                    $('#search_toggle').toggle(0);
+                    if ($('#search_toggle').css('display') == 'none') {
+                        $('#search_input').val(null);
+                    };
+                }); // end of $('#search').click(function() {
+
+                $('#search_button').click(function(e) {
+                    e.preventDefault();
+
+                    if ($('.form-control').val() == '') {
+                        alert('검색어를 입력해 주세요');
+                    } else {
+                        var link = "./HTML/product.html"
+                        window.location.href = link;
+                    }
+                }); // end of $('.btn-primary').click(function(e) {
+            }); // end of $(function(){
+            </script>
+</body>
+
+</html>

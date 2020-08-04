@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/** 컨텐츠 영역 height 값 조절 (common.css에 기본 min-height 500px) */
+#content {
+    min-height: 200px;
+}
+
+/** 타이틀 영역 */
+
+#title_area {
+    width: 100%;
+    height: 50px;
+}
+
+#title_area h2 {
+    margin: auto;
+    line-height: 50px;
+    font-size: 14px;
+    color: #353535;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans','Nanum Gothic','돋움', 'dotum', 'sans-serif';
+}
+
+/** 로그인 타입 영역 (회원, 비회원) */
+
+#login_type {
+    width: 100%;
+}
+
+#login_type #member{
+    width: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+
+#login_type #nomember {
+    width: 50%;
+    font-size: 12px;
+    color: #888888;
+    display: inline-block;
+    background-color: #FBFAFA;
+    border-top: 1px solid rgba(204, 204, 204, 0.3);
+    border-bottom: 1px solid #ccc;
+}
+
+#login_type .user {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/** 로그인 폼 영역 */
+
+#login_form {
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#login_form .checkbox {
+    font-size: 11px;
+    font-family: 'Open Sans','Nanum Gothic','돋움', 'dotum', 'sans-serif';
+    color: gray;
+}
+
+#login_form .checkbox label {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+#login_form .checkbox input {
+    margin-top: 1px;
+}
+
+.checkbox input[type=checkbox] {
+    margin-left: -19px;
+}
+
+#login_form .btn {
+    width: 100%;
+    height: 50px;
+    background-color: #262626;
+}
+
+/** 로그인 유틸 영역 */
+
+#login_util .util_list {
+    text-align: center;
+    background-color: #fff;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+#login_util .util_list li:nth-child(3) {
+    color: #DA3B3D;
+}
+
+
+/** 하단 소셜로그인 버튼 영역 */
+#login_social {
+    padding-top: 18px;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#login_social button {
+    width: 45px;
+    display: inline-block;
+    background-color: #fff;
+    border: none;
+    margin: auto;
+}
+
+#login_social button:nth-child(2) {
+    margin: 0 20px;
+}
+
+#login_social button .img_size {
+    display: inline-block;
+    margin: auto;
+    background-color: #fff;
+    width: 45px;
+}
+
+#login_social button img {
+    width: 100%;
+}
+
+

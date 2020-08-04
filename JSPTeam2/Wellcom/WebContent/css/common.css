@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* float 마감제 */
+.clear {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+/* 상단 영역 */
+#header {
+    width: 100%;
+    padding-bottom: 10px;
+    background-color: white;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    border-bottom: 2px solid #264695;
+    margin: 0;
+
+}
+
+#header .header_height {
+    height: 100%;
+
+}
+
+#header div span {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+#header #logo_section {
+    width: 70px;
+    display: block;
+    margin: auto;
+}
+
+#header #menu {
+    display: block;
+    margin: auto;
+}
+
+#header #search {
+    margin: auto;
+}
+
+#header #cart {
+    margin: auto;
+
+}
+
+#header #menu,
+#header #search,
+#header #cart {
+    width: 25px;
+    height: 25px;
+    line-height: 70px;
+    display: inline-block;
+}
+
+/* 박스 모달 창 화면 전체를 덮는 배경 레이어의 위치, 크기, 투명도 지정 > 기본적으로 표시되지 않도록 설정 */
+.gray_layer {
+    position: fixed;
+    z-index: 15000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+/* 메뉴 카테고리 박스 구현 영역 */
+.over_layer {
+    /* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+    display: none;
+    position: fixed;
+    z-index: 20000;
+    width: 70%;
+    height: 100vh;
+    background: white;
+    /* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+}
+
+.menucategory {
+    margin-top: 3px;
+    border-top: 2px solid #00799b;
+
+}
+
+.category {
+    font-size: 16px;
+    color: black;
+    white-space: nowrap;
+    padding: 5px;
+    border-bottom: 2px solid #eee;
+}
+
+#container #button_align {
+    text-align: left;
+    margin: -2px 0 5px 5px;
+}
+
+#container #toggle_menu {
+    text-align: right;
+    height: 65px;
+
+}
+
+#container #toggle_menu .user_name {
+    float: left;
+    margin: 5px;
+
+}
+
+#container .glyphicon {
+    display: inline;
+    padding-left: 17px;
+
+}
+
+.downcategory:focus {
+    text-decoration: none;
+}
+
+.downcategory .glyphicon:before {
+    content: "\e113";
+
+}
+
+.downcategory.collapsed .glyphicon:before {
+    content: "\e114";
+
+}
+
+
+
+
+#container #header #iconalign {
+    font-size: 30px;
+    margin: 5px;
+    display: inline;
+    top: 5px;
+}
+
+/* 메뉴 카테고리 박스 구현 영역 끝 */
+/* search */
+.input-group {
+    margin-top: 10px;
+}
+
+#header .search_toggle .input-group {
+    width: 100%;
+    padding-top: 10px;
+    margin: auto;
+}
+
+#header .search_toggle .input-group .form-control {
+    width: 80%;
+    overflow: auto;
+}
+
+.search_toggle {
+    width: 80%;
+
+    margin: auto;
+    display: none;
+}
+
+.search_toggle:before {
+    display: block;
+    content: '';
+    float: none;
+    clear: both;
+}
+
+/* search end*/
+/* 내용 영역 */
+#content {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 500px;
+}
+
+/* 하단 영역 */
+#footer {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #262626;
+    min-height: 12%;
+    padding-top: 10px;
+}
+
+#footer #table_section {
+    width: 80%;
+
+}
+
+#footer table {
+    width: 100%;
+    font-size: 0.7em;
+    font-family: 'Helvetica', '맑은 고딕', 'sans-serif';
+    color: #fff;
+    line-height: 20px;
+}
+
+#footer table thead th {
+    font-size: 1.2em;
+}
+
+#footer table th {
+    text-align: center;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#footer table td {
+    text-align: center;
+}
+
+#footer address {
+    border-top: 2px solid #294695;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: 15px;
+    padding: 16px 0 20px 0;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+}
+
+#footer .inc {
+    margin-bottom: 5px;
+}
+
+
+.onTop {
+    border: 0;
+    position: fixed;
+    bottom: 5%;
+    right: 3.5%;
+    border-radius: 50%;
+    background: #fff;
+}
