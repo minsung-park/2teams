@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+#content h1 {
+	font-size: 25px;
+	padding: 10px;
+}
+
+#content .popular_item1 ul {
+	display: block;
+}
+
+#content .popular_item2 ul {
+	display: inline-block;
+}
+
+/*
+#content .item_box {
+     영역 확인용 
+    border-bottom: 2px solid #294695;
+    padding: 0 10px;
+
+}
+*/
+#content .item_box {
+	border-bottom: 2px solid #eeeeee;
+	padding: 0 10px;
+}
+
+#content .popular_item1 .item_box {
+	overflow: auto;
+}
+
+#content .popular_item1 .item_box .scroll {
+	width: 870px;
+}
+
+#content .popular_item1 .item_box ul>li {
+	float: left;
+	width: 290px;
+	height: auto;
+	border: 2px solid white;
+	padding: 2px;
+	text-align: center;
+	margin: auto;
+}
+
+#content .popular_item2 .item_box ul>li {
+	float: left;
+	width: 33%;
+	border: 5px solid white;
+	text-align: center;
+}
+
+#content .item_box .product .desc {
+	font-size: 14px;
+	padding: 10px;
+	background-color: white;
+}
+
+#content .item_box .product .desc .name {
+	display: block;
+	margin: 0 0 5px;
+	font-size: 15px;
+	color: #444;
+	text-align: left;
+	height: 35px;
+}
+
+#content .item_box .product .desc .price {
+	display: block;
+	font-size: 12px;
+	line-height: 18px;
+	color: #888;
+	text-align: left;
+	height: 12px;
+}
+
+/* 더보기 버튼 */
+#content #more {
+	margin: 10px;
+	background: rgba(0, 0, 0, 0.7);
+	color: #ffffff;
+	padding: 5px 10px;
+	border-radius: 20px;
+	border: 0;
+	float: right;
+	color: #ffffff;
+}
+
+#content #more:focus {
+	outline: 0;
+}
+/* 금주의 이슈 영역 */
+#content .item_box .issue_li {
+	float: left;
+	width: 100%;
+	border: 2px solid white;
+	padding: 5px;
+}
+
+#content .issue_li .issue_img {
+	float: left;
+	width: 33%;
+	height: 100%;
+	margin-right: 10px;
+}
+
+#content .issue_li .name {
+	font-size: 1.1em;
+	line-height: 10px;
+}
+
+#content .issue_li .price {
+	font-size: 0.8em;
+	padding-left: 10px;
+}
+
+/*#content .issue_li p {
+
+   overflow: hidden;
+   text-overflow: ellipsis;
+}*/

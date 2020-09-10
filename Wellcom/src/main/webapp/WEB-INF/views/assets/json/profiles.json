@@ -1,0 +1,26 @@
+{
+	"info": {
+		"minsung": {
+			"user_name": "박민성",
+			"post_number": "10472",
+			"main_address": "경기 고양시 덕양구 화정동 858",
+			"sub_address": "달빛마을 110동 2004호",
+			"phone_number1": "010",
+			"phone_number2": "8606",
+			"phone_number3": "6993",
+			"email_address1": "altp12",
+			"email_address2": "hanmail.net"
+		},
+		"ezen": {
+			"user_name": "이젠IT컴퓨터학원",
+			"post_number": "10472",
+			"main_address": "서울 서초구 서초대로 77길 55",
+			"sub_address": "에이프로 스퀘어 3층",
+			"phone_number1": "02",
+			"phone_number2": "532",
+			"phone_number3": "6509",
+			"email_address1": "j.purplerose",
+			"email_address2": "gmail.com"
+		}
+	}
+}

@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+.delivery, #collapsePayment, .checkArea {
+	width: 90%;
+	margin: auto;
+}
+
+#collapseDelivery {
+	margin-top: 30px;
+}
+
+#collapseDelivery label {
+	width: 70px;
+	margin-right: 10px;
+	line-height: 25px;
+}
+
+.delivery .panel-collapse {
+	position: relative;
+	margin-top: 15px;
+}
+
+/* #collapseDelivery .deliv_box {
+ 	height: 40px;
+	position: absolute;
+	right: 10%;
+	top: 0;
+	padding: 3px 10px;
+	background: lightskyblue;
+	padding: 3px 10px;  
+}  */
+#deliv_list {
+	margin-left: 15px;
+	line-height: 10px;
+	background: linear-gradient(180deg, seashell, transparent 40px);
+}
+
+.delivery .clearfix {
+	margin-bottom: 15px;
+}
+
+#execDaumPost {
+	margin-left: 15px;
+	background: whitesmoke;
+	border: 1px solid lightgray;
+	color: #333;
+	border-radius: 4px;
+	background: #ADADAD;
+	border: 0;
+	color: #fff;
+	padding: 2px 5px
+}
+
+#collapseDelivery div {
+	margin-bottom: 8px;
+	/* margin-bottom: 3px; */
+	position: relative;
+}
+
+.delivery input, .delivery select, .delivery label, .wellcom_phoneNumber span,
+	.wellcom_email span {
+	float: left;
+}
+
+#deliv_list {
+	margin-left: 15px;
+	height: 24px;
+	line-height: 1;
+	background: linear-gradient(180deg, ghostwhite, transparent 40px);
+}
+
+#wellcom_postcode {
+	width: 40%;
+}
+
+#wellcom_address {
+	width: 75%;
+}
+
+#wellcom_detailAddress {
+	width: 75%;
+}
+
+#wellcom_extraAddress {
+	display: none;
+}
+
+#receiver_name {
+	width: 40%;
+}
+
+.panel-collapse .accordion-toggle {
+	background: whitesmoke;
+	font-size: 16px;
+	display: block;
+	text-decoration: none;
+	line-height: 40px;
+	margin-bottom: 10px;
+	text-indent: 10px;
+	position: relative;
+	font-size: 16px;
+}
+
+.wellcom_phoneNumber {
+	width: 100%;
+}
+
+.wellcom_phoneNumber select {
+	width: 22%;
+	height: 24px;
+}
+
+.wellcom_phoneNumber input {
+	width: 23%;
+	height: 24px;
+}
+
+.wellcom_email input, .wellcom_email select {
+	width: 113px;
+	height: 24px;
+}
+
+.wellcom_phoneNumber #phone_number1_direct {
+	width: 22%;
+	height: 24px;
+	position: absolute;
+	left: 80px;
+}
+
+.wellcom_email #email3_direct {
+	width: 113px;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	left: 208px;
+}
+
+#collapseDelivery .wellcom_memo {
+	margin-bottom: 30px;
+}
+
+.wellcom_memo #Message_direct {
+	width: 75%;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	left: 80px;
+}
+
+#payment3 {
+	position: relative;
+}
+
+#payment3 #card-direct {
+	width: 100%;
+	margin-top: 5px;
+	margin-left: 4px;
+}
+
+.wellcom_memo select {
+	width: 75%;
+	height: 24px;
+}
+
+.wellcom_phoneNumber span {
+	padding: 0 3px;
+}
+
+.wellcom_email span {
+	width: 15px;
+}
+
+#collapseProduct {
+	margin: auto;
+	margin: 20px auto;
+}
+
+.down_arrow {
+	position: absolute;
+	right: 3%;
+	width: 20px;
+	height: 11px;
+	top: 35%;
+}
+
+.accordion-toggle .down_arrow {
+	background: url(../img/down_arrow.png) no-repeat;
+	background-size: 20px 10px;
+}
+
+.accordion-toggle.collapsed .down_arrow {
+	background: url(../img/up_arrow.png) no-repeat;
+	background-size: 20px 10px;
+}
+
+#amount1 {
+	color: red;
+}
+
+.order_product .image_box>a {
+	display: block;
+	width: 100px;
+	height: 180px;
+	margin-right: 15px;
+}
+
+.order_product .show_option {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: block;
+	line-height: 1.2;
+}
+
+.order_product .image_box, .order_product .info_box {
+	float: left;
+}
+
+.order_product strong {
+	font-size: 14px;
+}
+
+.order_product .optionArea {
+	font-size: 10px;
+}
+
+#collapsePayment {
+	margin-top: 30px;
+}
+
+#collapsePayment label {
+	vertical-align: super;
+	margin-bottom: 10px;
+}
+
+#collapsePayment input {
+	display: inline;
+	margin-right: 10px;
+}
+
+#collapsePayment select {
+	width: auto;
+	height: 24px;
+	display: inline-block;
+	vertical-align: text-bottom;
+}
+
+#collapsePayment .data_align_first {
+	margin-left: -4px;
+}
+
+#collapsePayment .data_align_second {
+	margin-left: 2px;
+}
+
+#collapsePayment .panel-collapse {
+	margin-left: 20px;
+}
+
+.modal #deliv_pop {
+	margin-top: 30vh;
+}
+
+.modal .modal-content {
+	padding: 15px 10px;
+}
+
+.checkArea div {
+	margin-bottom: 10px;
+}
+
+.checkArea .btn-default {
+	display: block;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.checkArea input[type=checkbox] {
+	margin-right: 10px;
+}
+
+.checkArea label {
+	vertical-align: middle;
+}
+
+#collapsePayment div {
+	margin-bottom: 10px;
+}
+
+/*
+#payment2 #product2 {
+	margin-left:4px;
+}
+*/
+#payment2 #product_check {
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+#payment3 #card_select {
+	width: 100%;
+	padding-left: 5px;
+	margin-left: 4px;
+}
+
+#payment4 #paymentPhone {
+	vertical-align: text-bottom;
+}
+
+#payment4 label {
+	margin-left: 3px;
+}

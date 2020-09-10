@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+#breadcrumb {
+	background-color: #fff;
+}
+
+#breadcrumb>li+li:before {
+	content: ">\00a0";
+	padding: 0 5px;
+	color: #ccc;
+}
+
+#content_header {
+	font-size: 26px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+.content-box {
+	border: 1px solid #eee;
+	margin: 0 15px;
+}
+
+.content-box #call-box {
+	height: 280px;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 50px;
+}
+
+.content-box #call-box img {
+	width: 80px;
+	height: 80px;
+	margin: 20px 0 20px 0;
+}
+
+.content-box #call-box .number {
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.content-box #call-box .text {
+	font-size: 13px;
+}
+
+.link-box {
+	width: 330px;
+	font-size: 20px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px;
+	margin-top: 50px;
+}
+
+.link-box .chat {
+	padding: 10px;
+}
+
+.link-box .write {
+	padding: 10px;
+}
+
+.link-box .read {
+	padding: 10px;
+}
+
+.btn_image {
+	width: 40px;
+}

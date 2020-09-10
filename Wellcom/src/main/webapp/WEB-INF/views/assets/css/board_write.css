@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+#content .table-responsive .table-striped th {
+	font-size: 16px;
+	/* padding-bottom: 10px; */
+	text-align:left;
+	padding-right: 0px;
+}
+
+#th_title {
+	text-align:center;
+	width:35px;
+}
+
+
+
+#content .table-responsive thead .board_write {
+	width: 100%;
+	vertical-align:center;
+	/* margin: 5px 0 0 0; */
+	line-height: 20px;
+    border: solid 2px;
+    border-color: darkgray;
+}
+
+#content .table #board_write_glyphicon {
+	font-size: 24px;
+	padding-left: 2px;
+}
+
+#content .board_heading {
+	text-align: left;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding-left: 8px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+/* #content #write_content {
+	min-height: 400px;
+	width: 95%;
+	margin: 0 10px;
+	border: 1px solid white;
+} */
+
+#content .ck-placeholder {
+	min-height:300px;
+}
+
+#content .ck-content {
+	min-height:330px;
+}
+
+#content .ck-editor {
+	margin-top:-18px;
+}
+
+.write_button {
+	margin: 5px;
+	margin-top:40px;
+	width: 100%;
+}
+
+.write_button .btn {
+	width: 45%;
+	margin: 5px;
+}
+
+#text_content .cke_top{
+		margin-top:-20px;
+}
+

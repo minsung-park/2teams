@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="MypageMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type) -->
+	<resultMap id="bbs_boardMap"
+		type="study.spring.wellcom.model.Bbs_board">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column) 매핑 -->
+		<result property="bbs_board_id" column="bbs_board_id" />
+		<result property="members_id" column="members_id" />
+		<result property="type" column="type" />
+		<result property="head" column="head" />
+		<result property="content" column="content" />
+		<result property="hit" column="hit" />
+		<result property="reg_date" column="reg_date" />
+		<result property="edit_date" column="edit_date" />
+
+		<!-- 1 : 1 매핑 - association 1:다 관계 매핑 res <collection javaType="study.spring.wellcom.model.Members" 
+			property="members"> <id column="members_id" property="id"/> <result column="user_name" 
+			property="user_name" /> </collection> -->
+	</resultMap>
+	
+	<resultMap id="membersMap"
+		type="study.spring.wellcom.model.Members">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column) 매핑 -->
+		<result property="members_id" column="members_id" />
+		<result property="admin_permission" column="admin_permission" />
+		<result property="user_id" column="user_id" />
+		<result property="user_name" column="user_name" />
+		<result property="user_email" column="user_email" />
+		<result property="user_pw" column="user_pw" />
+		<result property="user_tel" column="user_tel" />
+		<result property="birthdate" column="birthdate" />
+		<result property="postcode" column="postcode" />
+		<result property="addr1" column="addr1" />
+		<result property="addr2" column="addr2" />
+		<result property="reg_date" column="reg_date" />
+		<result property="point" column="point" />
+		<result property="is_out" column="is_out" />
+		<result property="addr_list_id" column="addr_list_id" />
+	
+	</resultMap>
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectItem"
+		parameterType="study.spring.wellcom.model.Bbs_board"
+		resultMap="bbs_boardMap">
+		<!-- 	SELECT bbs_board_id, members_id, type, head, content, hit, 
+			date_format(reg_date,'%Y-%m-%d') as reg_date, date_format(edit_date,'%Y-%m-%d') as edit_date
+			FROM bbs_board WHERE bbs_board_id=#{bbs_board_id} -->
+			SELECT bbs_board_id, m.members_id, type, head, content, hit, 
+			date_format(b.reg_date,'%Y-%m-%d') as reg_date, date_format(edit_date,'%Y-%m-%d') as edit_date, user_name
+			FROM bbs_board b INNER JOIN members m ON b.members_id=m.members_id
+			WHERE bbs_board_id=#{bbs_board_id} 
+		
+	</select>
+	
+	<!-- 다중행 조회를 위한 기능 정의 -->
+	<select id="selectList"
+		parameterType="study.spring.wellcom.model.Bbs_board"
+		resultMap="bbs_boardMap">
+		SELECT bbs_board_id, m.members_id, type, head, content, hit, 
+			date_format(b.reg_date,'%Y-%m-%d') as reg_date, date_format(edit_date,'%Y-%m-%d') as edit_date, user_name
+			FROM bbs_board b INNER JOIN members m ON b.members_id=m.members_id where type=2
+
+		<where>
+			<if test="members_id != null and members_id != ''">
+				members_id LIKE concat('%', #{members_id}, '%')
+			</if>
+			<if test="type != null and type != ''">
+				type LIKE concat('%', #{type}, '%')
+			</if>
+			<if test="head != null and head != ''">
+				head LIKE concat('%', #{head}, '%')
+			</if>
+			<if test="content != null and content != ''">
+				content LIKE concat('%', #{content}, '%')
+			</if>
+			<if test="hit != null and hit != ''">
+				hit LIKE concat('%', #{hit}, '%')
+			</if>
+			<if test="reg_date != null and reg_date != ''">
+				reg_date LIKE concat('%', #{reg_date}, '%')
+			</if>
+			<if test="edit_date != null and edit_date != ''">
+				edit_date LIKE concat('%', #{edit_date}, '%')
+			</if>
+			<if test="user_name != null and user_name != ''">
+				edit_date LIKE concat('%', #{user_name}, '%')
+			</if>
+
+		</where>
+		ORDER BY bbs_board_id DESC
+		
+		 <if test="listCount > 0">
+        	LIMIT #{offset}, #{listCount}
+        </if>
+
+	</select>
+
+	<!-- 조건에 맞는 데이터 수를 집계하여 int 타입으로 반환한다. 집계 함수를 사용할 경우 Mapper에서는 resultType으로 
+		반환한다. -->
+	<select id="selectCountAll"
+		parameterType="study.spring.wellcom.model.Bbs_board" resultType="int">
+		SELECT COUNT(*) FROM Bbs_board
+
+		<where>
+			<if test="members_id != null and members_id != ''">
+				members_id LIKE concat('%', #{members_id}, '%')
+			</if>
+			<if test="type != null and type != ''">
+				type LIKE concat('%', #{type}, '%')
+			</if>
+			<if test="head != null and head != ''">
+				head LIKE concat('%', #{head}, '%')
+			</if>
+			<if test="content != null and content != ''">
+				or content LIKE concat('%', #{content}, '%')
+			</if>
+		</where>
+	</select>
+	
+		<select id="selectCountType"
+		parameterType="study.spring.wellcom.model.Bbs_board" resultType="int">
+		SELECT COUNT(*) FROM Bbs_board WHERE type=2
+
+		<where>
+			<if test="members_id != null and members_id != ''">
+				members_id LIKE concat('%', #{members_id}, '%')
+			</if>
+			<if test="type != null and type != ''">
+				type LIKE concat('%', #{type}, '%')
+			</if>
+			<if test="head != null and head != ''">
+				head LIKE concat('%', #{head}, '%')
+			</if>
+			<if test="content != null and content != ''">
+				or content LIKE concat('%', #{content}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertItem"
+		parameterType="study.spring.wellcom.model.Bbs_board"
+		useGeneratedKeys="true" keyProperty="bbs_board_id">
+
+		INSERT INTO help_board (head, content)
+		VALUES (#{head},#{content})
+
+	</insert>
+
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem"
+		parameterType="study.spring.wellcom.model.Bbs_board">
+		DELETE FROM Bbs_board WHERE bbs_board_id=#{bbs_board_id};
+	</delete>
+
+	<!-- 데이터 갱신을 위한 기능 정의 -->
+	<update id="updateItem"
+		parameterType="study.spring.wellcom.model.Bbs_board">
+		UPDATE Bbs_board SET head=#{head}, content=#{content}
+		WHERE bbs_board_id=#{bbs_board_id};
+	</update>
+
+
+</mapper>

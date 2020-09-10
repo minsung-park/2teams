@@ -1,0 +1,432 @@
+@charset "utf-8";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* body {
+	position:relative;	
+} */
+#container {
+	position: relative;
+	min-height: 100%;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
+}
+
+/* float 마감제 */
+.clear {
+	content: '';
+	display: block;
+	float: none;
+	clear: both;
+}
+
+.btn-primary {
+/* 	background: #1C77B8!important; */
+background: rgba(60,60,60,0.8);
+	color: #ffffff !important;
+	border-color : white;
+}
+
+/* 상단 영역 */
+#header {
+	width: 100%;
+	background-color: white;
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	border-bottom: 2px solid #eee;
+	margin: 0;
+	background-color: white;
+	padding-bottom: 10px;
+}
+
+#header .header_height {
+	height: 100%;
+}
+
+#header div span {
+	display: block;
+	margin: auto;
+	text-align: left;
+	font-size: 10px;
+}
+
+#header #over_layer .toggle_menu_heading {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+#header #logo_section {
+	width: 60px;
+	display: block;
+	margin: auto;
+	margin-top: 12px;
+}
+
+#header #menu {
+	display: block;
+	margin: auto;
+}
+
+#header #search {
+	margin: auto;
+	margin-left: 10px;
+	margin-top: 1px;
+}
+
+#header #cart {
+	margin: auto;
+	margin-top: 1px;
+}
+
+#header #menu, #header #search, #header #cart {
+	width: 25px;
+	height: 25px;
+	line-height: 78px;
+	display: inline-block;
+	font-size: 23px;
+	color: #090707;
+}
+
+/* 박스 모달 창 화면 전체를 덮는 배경 레이어의 위치, 크기, 투명도 지정 > 기본적으로 표시되지 않도록 설정 */
+.gray_layer {
+	position: fixed;
+	z-index: 15000;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+/* 메뉴 카테고리 박스 구현 영역 */
+.over_layer_content {
+	width: 80%;
+	margin: auto;
+	margin-top: 40px;
+}
+
+.over_layer {
+	/* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+	display: none;
+	position: fixed;
+	z-index: 20000;
+	width: 80%;
+	height: 100vh;
+	background: linear-gradient(to top, #FFFFFF, #f2f2f2);
+	overflow: auto;
+	/* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+	/* animation: bounceInLeft;
+  	animation-duration: 0.7s; */
+	animation: fadeInLeft;
+	animation-duration: 0.4s;
+	/*	 animation: slideInLeft;
+  	animation-duration: 0.5s; */
+}
+
+.close_icon {
+	width: 45px;
+	position: absolute;
+	top: 5px;
+	right: 19px;
+	color: #090707;
+	font-size: 25px;
+	right: -13px;
+}
+
+.close_icon img {
+	width: 100%;
+	animation: fadeInLeft;
+	animation-duration: 0.536s;
+
+	/*	display: block;
+	float: right;
+	margin: auto;
+	position: relative; */
+}
+
+.menucategory {
+	margin-top: 3px;
+}
+
+.category {
+	font-size: 16px;
+	color: black;
+	white-space: nowrap;
+	padding: 5px;
+	border-bottom: 2px solid #eee;
+}
+
+#button_align {
+	margin-bottom: 35px;
+}
+
+#container #button_align .btn {
+	width: 50%
+}
+
+#button_align #login {
+	background-color: #3c3c3c;
+	color: #eee;
+}
+
+#button_align #join {
+	background-color: #fff;
+	color: #3c3c3c;
+}
+
+.menu_img_group .menu_img {
+	text-align: center;
+	display: block;
+	float: left;
+	margin: auto;
+	width: 25%;
+}
+
+.menu_img_group .menu_img img {
+	width: 25px;
+}
+
+#icon_align .menu_img .icon_name {
+	text-align: center;
+	margin-top: 5px;
+}
+
+.menu_img_group {
+	margin-bottom: 30px;
+}
+
+.menu_search img {
+	display: block;
+	float: right;
+	margin: auto;
+	width: 10%;
+	width: 40px;
+	position: relative;
+	top: -34px;
+	right: -6px;
+}
+
+.menu_search {
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.menu_search_click {
+	position: absolute;
+	right: 12px;
+	top: 4px;
+}
+
+.menu_search .menu_search_area {
+	width: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	padding: 2px;
+	/*
+	background-image: url(/Wellcom/img/menu_search.png);
+	background-size:35px;
+	background-repeat: no-repeat;
+	background-position: right; */
+}
+
+.category_item {
+	margin-bottom: 40px;
+}
+
+.category_item .category_heading {
+	position: relative;
+	padding: 0 34px 0 15px;
+	background: #fff;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 35px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 0;
+	border-bottom: 1px solid #ADADAD;
+}
+
+.category_item .category_heading i {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.category_item .category_item_list {
+	margin: 0;
+	background: #fff;
+	font-size: 11px;
+	line-height: 35px;
+	text-transform: uppercase;
+}
+
+.category_item .category_item_list .category_item_list_child {
+	position: relative;
+	border-bottom: 1px solid #eaeaea;
+	font-weight: 700;
+	display: block;
+	padding-left: 15px;
+	color: #ADADAD;
+}
+
+.category_item .category_item_list img {
+	display: block;
+	float: right;
+	margin: auto;
+	position: relative;
+	width: 20px;
+	top: 12px;
+	right: -20px;
+}
+
+#container .glyphicon {
+	display: inline;
+	padding-left: 17px;
+}
+
+.downcategory:focus {
+	text-decoration: none;
+}
+
+.downcategory .glyphicon:before {
+	content: "\e113";
+}
+
+.downcategory.collapsed .glyphicon:before {
+	content: "\e114";
+}
+
+#container #header #iconalign {
+	font-size: 30px;
+	margin: 5px;
+	display: inline;
+	top: 5px;
+}
+
+/* 메뉴 카테고리 박스 구현 영역 끝 */
+/* search */
+.input-group {
+	margin-top: 10px;
+}
+
+#header .search_toggle .input-group {
+	width: 100%;
+	padding-top: 10px;
+	margin: auto;
+}
+
+#header .search_toggle .input-group .form-control {
+	width: 80%;
+	overflow: auto;
+}
+
+.search_toggle {
+	width: 80%;
+	margin: auto;
+	display: none;
+}
+
+.search_toggle:before {
+	display: block;
+	content: '';
+	float: none;
+	clear: both;
+}
+
+/* search end*/
+/* 내용 영역 */
+#content {
+	margin-top: 100px;
+	width: 100%;
+	margin-bottom: 80px;
+	/* 	min-height:100%; */
+}
+
+/* 하단 영역 */
+#footer {
+	margin-top: 50px;
+	width: 100%;
+	background-color: #262626;
+	/* 	min-height: 12%; */
+	padding-top: 10px;
+	/* 	position:absolute;
+	bottom:0;
+	z-index:3; */
+}
+
+#footer #table_section {
+	width: 80%;
+}
+
+#footer table {
+	width: 100%;
+	font-size: 0.7em;
+	font-family: 'Helvetica', '맑은 고딕', 'sans-serif';
+	color: #fff;
+	line-height: 20px;
+}
+
+#footer table thead th {
+	font-size: 1.2em;
+}
+
+#footer table th {
+	text-align: center;
+	padding-left: 5px;
+	padding-top: 5px;
+}
+
+#footer table td {
+	text-align: center;
+}
+
+#footer address {
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	margin-top: 15px;
+	padding: 16px 0 20px 0;
+	background: rgba(255, 255, 255, 0.1);
+/* 	font-size: 12px; */
+}
+
+#footer .inc {
+	margin-bottom: 5px;
+}
+
+.onTop {
+	border: 0;
+	position: fixed;
+	bottom: 5%;
+	right: 3.5%;
+	border-radius: 50%;
+	background: #fff;
+	z-index: 10000;
+}

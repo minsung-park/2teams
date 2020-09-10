@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+/* 내용 영역 */
+
+/* 다른 CSS 파일에서 영향받는 항목 초기화*/
+#footer {
+    margin-top:0px;
+}
+
+#container .glyphicon {
+    padding-left:0px;
+}
+
+.form-horizontal .form-group {
+    margin-left : 0px;
+    margin-right: 0px;
+}
+
+
+/* 본 CSS 작업 시작 */
+
+#content {
+    width: 100%;
+    height: 100%;
+        margin-bottom: 0px;
+}
+
+/* 현재 페이지 내용 안내해주는 헤더 */
+
+
+
+
+#breadcrumb {
+    background-color: #fff;
+    margin-bottom:0px;
+}
+
+#breadcrumb>li+li:before {
+    content: ">\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}
+
+#content_header {
+    font-size: 26px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+/* 본 내용 CSS  */
+
+#content_main{
+ width: 90%;
+ min-height: 300px;	
+	margin: auto;
+}
+
+#card{
+	width: 100%;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#card_img {
+	width: 100%;
+	margin: auto;
+}
+
+#expirydate{
+	width: 100%
+	
+}
+
+#expirydate1 {
+	display: inline-block;
+}
+
+#expirydate2 {
+	display: inline-block;
+	padding-left:0px;
+	padding-right:0px;
+}
+
+
+#expirydate_select1 {
+	width:70px;
+	display: inline-block;
+}
+
+
+#expirydate_select2 {
+	width:80px;
+display: inline-block;
+}
+
+
+#content_bottom {
+	
+	width: 90%;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom:30px;
+}

@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/** 컨텐츠 영역 height 값 조절 (common.css에 기본 min-height 500px) */
+/*#content {
+    min-height: 200px;
+}*/
+
+/** 타이틀 영역 */
+
+#title_area {
+    width: 100%;
+    height: 50px;
+}
+
+#title_area h2 {
+    margin: auto;
+    line-height: 50px;
+    font-size: 14px;
+    color: #353535;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Nanum Gothic', '돋움', 'dotum', 'sans-serif';
+}
+
+/** 가입단계 분류 영역 */
+#progress {
+    width: 100%;
+}
+
+#progress li {
+    float: left;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 33.3%;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+#progress ul:after {
+    content: '';
+    float: none;
+    clear: both;
+    display: block;
+}
+
+#progress li:nth-child(1) {
+    background-color: #DC3937;
+    border-right: 1px solid #ccc;
+    color: #fff;
+}
+
+#progress li:nth-child(2) {
+    border-right: 1px solid #ccc;
+}
+
+
+/** 가입동의 영역 */
+#agree {
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#agree_all {
+    padding-bottom: 10px;
+
+}
+
+#agree_all h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#agree_all input[type="checkbox"] {
+    display: inline-block;
+    height: 50px;
+}
+
+/** 가입동의 폼 영역 */
+#agree .badge {
+    background-color: #294695;
+}
+
+.contents {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 200px;
+    padding: 14px;
+    color: #757575;
+    font-size: 11px;
+}
+
+
+#agree .btn {
+    float: right;
+    font-size: 12px;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+#agree #agree_button {
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+#agree_button button {
+    float: left;
+}
+
+#agree_button:after {
+    float: none;
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#agree #agree_button #button_next {
+    width: 49%;
+    margin-right: 2%;
+    height: 40px;
+    background-color: rgba(26, 26, 26, 0.9);
+    border: none;
+    color: #fff;
+}
+
+#agree #agree_button #button_cancel {
+    width: 49%;
+    height: 40px;
+    border: none;
+}
+
+#agree_button a {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    line-height: 40px;
+}

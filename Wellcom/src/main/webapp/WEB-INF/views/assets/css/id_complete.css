@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+
+/** 타이틀 영역 */
+
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+#find_complete_box .font13 {
+    font-size: 13px;
+}
+
+#find_complete_box {
+    border: 1px solid #E8E8E8;
+    width: 94%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    padding: 20px;
+    font-size: 14px;
+}
+
+
+#find_id_form {
+    margin-top: 20px;
+}
+
+#find_id_form ul {
+    border-top: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+    border-left: 1px solid #E8E8E8;
+    width: 94%;
+    margin: auto;
+}
+
+#find_id_form ul:last-child {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+#find_id_form li {
+    width: 100%;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+
+#find_id_form .table_th {
+    width: 40%;
+    padding-left: 10px;
+    color: #757575;
+}
+
+.find_id {
+    padding-left: 10px;
+}
+
+#find_id_form .table_td {
+    width: 60%;
+    float: right;
+    padding-right: 10px;
+}
+
+
+input[type=radio] {
+    margin-right: 5px;
+}
+
+#find_id_form:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+#button_area {
+    width: 94%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#button_area button {
+    display: inline-block;
+    float: left;
+    width: 49%;
+    height: 40px;
+    margin: auto;
+    border: 0;
+}
+
+#button_area:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+#button_area #move_login, #move_find_pw {
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+#button_area #move_login {
+    margin-right: 5px;
+    background-color: #333333;
+    color: #fff;
+}
+
+#button_area #move_find_pw {
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+}
+
+#button_area  #move_login a {
+    display: block;
+    width: 100%;
+    height: auto;
+
+}
+
+#button_area  #move_find_pw a {
+    display: block;
+    width: 100%;
+    height: auto;
+}

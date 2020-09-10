@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 	
+ 	
+ 	<mapper namespace="MembersMapper">
+ 	
+ 	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+ 	<resultMap id="membersMap" type="study.spring.wellcom.model.Members">
+ 		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+ 		<result property="members_id" column="members_id"/>
+ 		<result property="admin_permission" column="admin_permission"/>
+ 		<result property="user_id" column="user_id"/>
+ 		<result property="user_name" column="user_name"/>
+ 		<result property="user_email" column="user_email"/>
+ 		<result property="user_pw" column="user_pw"/>
+ 		<result property="user_tel" column="user_tel"/>
+ 		<result property="birthdate" column="birthdate"/>
+ 		<result property="postcode" column="postcode"/>
+ 		<result property="addr1" column="addr1"/>
+ 		<result property="addr2" column="addr2"/>
+ 		<result property="reg_date" column="reg_date"/>
+ 		<result property="point" column="point"/>
+ 		<result property="is_out" column="is_out"/>
+ 		<result property="addr_list_id" column="addr_list_id"/>
+ 	
+ 	
+ 	</resultMap>
+ 	
+ 	<!-- 단일행 조회를 위한 기능 정의 -->
+ 	<select id="selectItem" parameterType="study.spring.wellcom.model.Members" resultMap="membersMap">
+ 		SELECT members_id, admin_permission, user_id, user_name, user_email, user_pw, user_tel, birthdate, postcode, addr1, addr2, reg_date, point, is_out, addr_list_id FROM members WHERE members_id=#{members_id};
+ 		
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	<!-- 다중행 조회를 위한 기능 정의 -->
+ 	<select id="selectList" parameterType="study.spring.wellcom.model.Members" resultMap="membersMap">
+ 	SELECT members_id, admin_permission, user_id, user_name, user_email, user_pw, user_tel, birthdate, postcode, addr1, addr2, reg_date, point, is_out, addr_list_id FROM members
+ 	
+ 	<where>
+ 		<if test="members_id != null and members_id != ''">
+ 			members_id LIKE concat('%', #{members_id}, '%')
+ 		</if>
+		 <if test="admin_permission != null and admin_permission != ''">
+ 			OR admin_permission LIKE concat('%', #{admin_permission}, '%')
+ 		</if>
+ 		<if test="user_id != null and user_id != ''">
+ 			OR user_id LIKE concat('%', #{user_id}, '%')
+ 		
+ 		</if>
+ 		<if test="user_name != null and user_name != ''">
+ 			OR user_name LIKE concat('%', #{user_name}, '%')
+ 		
+ 		</if>
+ 		<if test="user_email != null and user_email != ''">
+ 			OR user_email LIKE concat('%', #{user_email}, '%')
+ 		
+ 		</if>
+ 		<if test="user_pw != null and user_pw != ''">
+ 			OR user_pw LIKE concat('%', #{user_pw}, '%')
+ 		
+ 		</if>
+ 		<if test="user_tel != null and user_tel != ''">
+ 			OR user_tel LIKE concat('%', #{user_tel}, '%')
+ 		
+ 		</if>
+ 		<if test="birthdate != null and birthdate != ''">
+ 			OR birthdate LIKE concat('%', #{birthdate}, '%')
+ 		
+ 		</if>
+ 		<if test="postcode != null and postcode != ''">
+ 			OR postcode LIKE concat('%', #{postcode}, '%')
+ 		
+ 		</if>
+ 		<if test="addr1 != null and addr1 != ''">
+ 			OR addr1 LIKE concat('%', #{addr1}, '%')
+ 		
+ 		</if>
+ 		<if test="addr2 != null and addr2 != ''">
+ 			OR addr2 LIKE concat('%', #{addr2}, '%')
+ 		
+ 		</if>
+ 		<if test="reg_date != null and reg_date != ''">
+ 			OR reg_date LIKE concat('%', #{reg_date}, '%')
+ 		
+ 		</if>
+ 		<if test="point != null and point != ''">
+ 			OR point LIKE concat('%', #{point}, '%')
+ 		
+ 		</if>
+ 		<if test="is_out != null and is_out != ''">
+ 			OR is_out LIKE concat('%', #{is_out}, '%')
+ 		
+ 		</if>
+ 		<if test="addr_list_id != null and addr_list_id != ''">
+ 			OR addr_list_id LIKE concat('%', #{addr_list_id}, '%')
+ 		
+ 		</if>
+ 		
+	 	
+ 	
+ 	</where>
+ 	
+ 	ORDER BY members_id DESC
+ 	
+ 	</select>
+ 	
+ 	
+ 	<!-- 데이터 저장을 위한 기능 정의 -->
+ 	<insert id="insertItem"
+  	parameterType="study.spring.wellcom.model.Members" useGeneratedKeys="true" keyProperty="members_id">
+ 		INSERT INTO members(admin_permission, user_id, user_name, user_email, user_pw, user_tel, birthdate, postcode, addr1, addr2, reg_date, point, is_out, addr_list_id) VALUES (#{admin_permission}, #{user_id}, #{user_name}, #{user_email}, #{user_pw}, #{user_tel}, #{birthdate}, #{postcode}, #{addr1}, #{addr2}, #{reg_date}, #{point}, #{is_out}, #{addr_list_id});
+ 	
+ 	
+ 	
+ 	</insert>
+ 	<!-- 데이터 삭제를 위한 기능 정의 -->
+ 	
+ 	<delete id="deleteItem" parameterType="study.spring.wellcom.model.Members">
+ 	
+ 	DELETE FROM members WHERE members_id=#{members_id};
+ 	</delete>
+ 	
+ 	
+ 	<!-- 데이터 갱신을 위한 기능 정의 -->
+ 	
+ 	<update id="updateItem" parameterType="study.spring.wellcom.model.Members">
+ 	UPDATE members SET admin_permission=#{admin_permission}, user_id=#{user_id}, user_name=#{user_name}, user_email=#{user_email}, user_pw=#{user_pw}, user_tel=#{user_tel}, birthdate=#{birthdate}, postcode=#{postcode}, addr1=#{addr1}, addr2=#{addr2}, reg_date=#{reg_date}, point=#{point}, is_out=#{is_out}, addr_list_id=#{addr_list_id}
+ 	WHERE members_id=#{members_id};
+ 	
+ 	</update>
+ 	
+ 	<!-- 데이터 수 조회하기 -->
+ 	<!-- 조건에 맞는 데이터 수를 집계하여 int타입으로 반환한다.
+ 	count, max, min, sum, avg 함수를 사용한 경우 Mapper에서는 resultMap이 아닌 resultType으로 반환한다. -->
+
+	<select id="selectCountAll" parameterType="study.spring.wellcom.model.Members" resultType="int">
+	SELECT COUNT(*) FROM members
+	
+	<where>
+		<if test="admin_permission != null and admin_permission != ''">
+		admin_permission LIKE concat('%', #{admin_permission}, '%')
+		</if>
+		<if test="user_id != null and user_id != ''">
+		OR user_id LIKE concat('%', #{user_id}, '%')
+		</if>
+		<if test="user_email != null and user_email != ''">
+		OR user_email LIKE concat('%', #{user_email}, '%')
+		</if>
+		<if test="user_pw != null and user_pw != ''">
+		OR user_pw LIKE concat('%', #{user_pw}, '%')
+		</if>
+		<if test="user_tel != null and user_tel != ''">
+		OR user_tel LIKE concat('%', #{user_tel}, '%')
+		</if>
+		<if test="birthdate != null and birthdate != ''">
+		OR birthdate LIKE concat('%', #{birthdate}, '%')
+		</if>
+		<if test="postcode != null and postcode != ''">
+		OR postcode LIKE concat('%', #{postcode}, '%')
+		</if>
+		<if test="addr1 != null and addr1 != ''">
+		OR addr1 LIKE concat('%', #{addr1}, '%')
+		</if>
+		<if test="addr2 != null and addr2 != ''">
+		OR addr2 LIKE concat('%', #{addr2}, '%')
+		</if>
+		<if test="reg_date != null and reg_date != ''">
+		OR reg_date LIKE concat('%', #{reg_date}, '%')
+		</if>
+		<if test="point != null and point != ''">
+		OR point LIKE concat('%', #{point}, '%')
+		</if>
+		<if test="is_out != null and is_out != ''">
+		OR is_out LIKE concat('%', #{is_out}, '%')
+		</if>
+		<if test="addr_list_id != null and addr_list_id != ''">
+		OR addr_list_id LIKE concat('%', #{addr_list_id}, '%')
+		</if>
+	</where>
+	
+	</select> 	
+ 	
+ 	
+ 	
+ 	
+ 	</mapper>

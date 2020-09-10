@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="NoMemberLoginMapper">
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+	<resultMap id="nomemberloginMap"
+		type="study.spring.wellcom.model.NoMemberLogin">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+		<result property="no_member_id" column="no_member_id" />
+		<result property="no_user_name" column="no_user_name" />
+		<result property="no_user_pw" column="no_user_pw" />
+	</resultMap>
+
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectItem"
+		parameterType="study.spring.wellcom.model.NoMemberLogin"
+		resultMap="nomemberloginMap">
+		SELECT no_member_id, no_user_name, no_user_pw FROM no_member WHERE no_member_id=#{no_member_id};
+	</select>
+
+	<!-- 다중행 조회를 위한 기능 정의 -->
+	<!-- <select id="selectList"
+		parameterType="study.spring.wellcom.model.MembersLogin"
+		resultMap="membersloginMap">
+		SELECT id, user_id, user_pw FROM members
+
+		<where>
+			<if test="dname != null and dname != ''">
+				dname LIKE concat('%', #{dname}, '%')
+			</if>
+
+			<if test="loc != null and loc != ''">
+				OR loc LIKE concat('%', #{loc}, '%')
+			</if>
+		</where>
+		ORDER BY deptno DESC
+	</select>
+
+	데이터 저장을 위한 기능 정의
+	<insert id="insertItem"
+		parameterType="study.spring.wellcom.model.MembersLogin"
+		useGeneratedKeys="true" keyProperty="deptno">
+		INSERT INTO department (dname,
+		loc) VALUES (#{dname}, #{loc});
+	</insert>
+	데이터 삭제를 위한 기능 정의
+	<delete id="deleteItem"
+		parameterType="study.spring.wellcom.model.MembersLogin">
+		DELETE FROM department WHERE deptno=#{deptno};
+	</delete>
+	데이터 갱신을 위한 기능 정의
+	<update id="updateItem"
+		parameterType="study.spring.wellcom.model.MembersLogin">
+		UPDATE department SET dname=#{dname}, loc=#{loc} WHERE
+		deptno=#{deptno};
+	</update>
+
+	조건에 맞는 데이터 수를 집계하여 int 타입으로 반환한다. count, max, min, sum, avg 함수를 사용한 
+		경우 Mapper에서는 resultMap이 아닌 resultType으로 반환한다.
+	<select id="selectCountAll"
+		parameterType="study.spring.wellcom.model.MembersLogin" resultType="int">
+		SELECT COUNT(*) FROM department
+
+		<where>
+			<if test="dname != null and dname != ''">
+				dname LIKE concat('%', #{dname}, '%')
+			</if>
+
+			<if test="loc != null and loc != ''">
+				OR loc LIKE concat('%', #{loc}, '%')
+			</if>
+		</where>
+	</select> -->
+	<!-- 데이터 수 조회하기 -->
+
+</mapper>

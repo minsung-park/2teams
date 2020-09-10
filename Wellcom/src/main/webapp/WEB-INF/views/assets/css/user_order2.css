@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+/* 내용 영역 */
+
+/* 다른 CSS 파일에서 영향받는 항목 초기화*/
+#container .glyphicon {
+	padding-left: 0px;
+}
+
+
+#footer{
+	margin-top: 0px;
+}
+
+/* float 마감제 */
+.clear {
+	content: '';
+	float: none;
+	clear: both;
+	display: block;
+}
+
+/* 본 CSS시작 */
+#content {
+	width: 100%;
+	min-height: 300px;
+}
+
+/* 헤더 내용 */
+#breadcrumb {
+	background-color: #fff;
+}
+
+#breadcrumb>li+li:before {
+	content: ">\00a0";
+	padding: 0 5px;
+	color: #ccc;
+}
+
+#content_header {
+	font-size: 26px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+/* 본 내용 */
+
+/* 발송완료 내용 */
+#content_main {
+	width: 100%;
+	min-height: 300px;
+}
+
+#order_heading{
+	width: 80%;
+    height: 85px;
+    margin: auto;
+}
+
+
+#order_list_area {
+	width: 80%;
+	min-height: 100px;
+	margin: auto;
+	
+}
+.order_list{
+	width: 100%;
+	margin: auto;
+	height: 200px;
+	border: 1px solid #b9b9b9;
+}
+
+
+#order_list1 {
+	margin-bottom: 20px;
+
+}
+
+#order_list1_img{
+	display: block;
+	width: 88px;
+	height: 88px;
+	margin:auto;
+	margin-top:55px;
+	margin-bottom:55px;
+	
+
+}
+#order_list1_divider{
+	width:35%;
+	height: 100%;
+	float:left;
+	border-right:1px solid #b9b9b9;
+}
+
+#order_list1_divider2{
+	width:65%;
+	height: 100%;
+	float:right;
+	
+}
+#order_list1_divider3{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-top:20px;
+	font-weight: bold;
+	
+}
+#order_list1_divider4{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-bottom:20px;
+	
+	
+}
+#order_list1_divider4 .qty{
+	display:block;
+}
+#order_list1_divider4 .price{
+	display:block;
+}
+#order_list1_divider4 .product_status{
+	display:block;
+}
+
+
+
+
+
+
+#order_list2 {
+	margin-bottom: 20px;
+
+}
+#order_list2_img{
+	display: block;
+	width: 88px;
+	height: 88px;
+	margin:auto;
+	margin-top:55px;
+	margin-bottom:55px;
+
+
+}
+
+
+#order_list2_divider{
+	width:35%;
+	height: 100%;
+	float:left;
+	border-right:1px solid #b9b9b9;
+}
+
+#order_list2_divider2{
+	width:65%;
+	height: 100%;
+	float:right;
+	
+}
+#order_list2_divider3{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-top:20px;
+	font-weight: bold;
+}
+#order_list2_divider4{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-bottom:20px;
+}
+#order_list2_divider4 .qty{
+	display:block;
+}
+#order_list2_divider4 .price{
+	display:block;
+}
+#order_list2_divider4 .product_status{
+	display:block;
+}
+
+
+
+
+#order_list3 {
+	margin-bottom: 20px;
+
+}
+
+#order_list3_img{
+	display: block;
+	width: 88px;
+	height: 88px;
+	margin:auto;
+	margin-top:55px;
+	margin-bottom:55px;
+	
+
+}
+
+#order_list3_divider{
+	width:35%;
+	height: 100%;
+	float:left;
+	border-right:1px solid #b9b9b9;
+}
+
+#order_list3_divider2{
+	width:65%;
+	height: 100%;
+	float:right;
+	
+}
+#order_list3_divider3{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-top:20px;
+	font-weight: bold;
+}
+#order_list3_divider4{
+	width:100%;
+	height: 50%;
+	margin-left:20px;
+	margin-bottom:20px;
+	
+}
+#order_list3_divider4 .qty{
+	display:block;
+}
+#order_list3_divider4 .price{
+	display:block;
+}
+#order_list3_divider4 .product_status{
+	display:block;
+}
+
+
+/* 주문내역 */
+#order_info_area {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+#order_info_area #order_number{
+	width: 100%;
+	min-height: 200px;
+	margin: auto;
+	border: 1px solid #b9b9b9;
+	margin-bottom: 20px;
+}
+
+#order_info_area #order_number_heading{
+	width: 90%;
+	display: block;
+	margin: auto;
+	text-align:center;
+	font-size: 18px;
+	margin-top:10px;
+	
+}
+#order_number .detail{
+	margin-left: 10px;
+		display:block;
+		height: 10px;
+}
+
+#order_info_area #order_detail{
+	width: 100%;
+	min-height: 200px;
+	margin: auto;
+	border: 1px solid #b9b9b9;
+	margin-bottom: 20px;
+
+}
+
+#order_info_area #order_payment{
+	width: 100%;
+	min-height: 200px;
+	margin: auto;
+	border: 1px solid #b9b9b9;
+}
+
+
+#order_detail_heading{
+
+	width: 90%;
+	height: 20px;
+	display: block;
+	margin: auto;
+	text-align:center;
+	font-size: 18px;
+	margin-top:10px;
+	font-weight: bold;
+	
+}
+#order_detail .detail{
+	margin-left: 10px;
+		display:block;
+		height: 20px;
+}
+
+
+#order_detail #order_name{
+ 	margin-top : 10px;	
+}
+#order_payment_heading{
+	
+	width: 90%;
+	display: block;
+	margin: auto;
+	text-align:center;
+	font-size: 18px;
+	margin-top:10px;
+	font-weight: bold;
+}
+
+#order_payment .detail_left{
+	margin-left: 10px;
+	margin-bottom:10px;
+		display:inline-block;
+		height: 20px;
+		
+}
+
+#order_payment .detail_right{
+	margin-right: 10px;
+	display: inline-block;
+		float:right;
+		height: 20px;
+		
+		
+}
+
+#button_area {
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom:20px;
+}
+
+
+#button_area1 {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+	background-color: #efefef;
+	
+}
+
+
+#button_area2 {
+	width: 100%;
+	display: block;
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CartMapper">
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+	<resultMap id="cartMap"
+		type="study.spring.wellcom.model.Cart">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+		<result property="cart_id" column="cart_id" />
+		<result property="members_id" column="members_id" />
+		<result property="no_member_id" column="no_member_id" />
+		<result property="product_id" column="product_id" />
+		<result property="user_select_id" column="user_select_id" />
+		<result property="product_amount" column="product_amount" />
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+		<result property="name" column="name" />
+		<result property="price" column="price" />
+		<result property="thumb" column="thumb" />
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다. -->
+		<result property="vga_choose" column="vga_choose" />
+		<result property="vga_name" column="vga_name" />
+		<result property="vga_price" column="vga_price" />
+		<result property="ram_choose" column="ram_choose" />
+		<result property="ram_name" column="ram_name" />
+		<result property="ram_price" column="ram_price" />
+		<result property="pow_choose" column="pow_choose" />
+		<result property="pow_name" column="pow_name" />
+		<result property="pow_price" column="pow_price" />
+		<result property="storage_choose" column="storage_choose" />
+		<result property="storage_name" column="storage_name" />
+		<result property="storage_price" column="storage_price" />
+
+	</resultMap>
+
+	<!-- 1. 선택한 장바구니 구매 -->
+	<select id="setCart"
+		parameterType="study.spring.wellcom.model.Cart" resultMap="cartMap">
+		SELECT
+		c.cart_id, c.members_id, c.no_member_id, c.product_id,
+		c.user_select_id, c.product_amount, p.name, p.price, p.thumb,
+		u.vga_choose, u.ram_choose, u.pow_choose,
+		u.storage_choose FROM cart c
+		INNER JOIN
+		product p ON c.product_id = p.product_id INNER JOIN
+		user_select u ON c.user_select_id = u.user_select_id WHERE cart_id
+		=
+		#{cart_id};
+	</select>
+
+	<!-- 2. 장바구니 목록 -->
+	<select id="listCart"
+		parameterType="study.spring.wellcom.model.Cart" resultMap="cartMap">
+		SELECT
+		c.cart_id, c.members_id, c.product_id,
+		c.user_select_id,
+		c.product_amount, p.name, p.price, p.thumb,
+		u.vga_choose, u.vga_name,
+		u.vga_price, u.ram_choose, u.ram_name, u.ram_price,
+		u.pow_choose,
+		u.pow_name, u.pow_price,
+		u.storage_choose, u.storage_name,
+		u.storage_price FROM cart c
+		INNER JOIN
+		product p ON
+		c.product_id =
+		p.product_id INNER JOIN
+		user_select u ON
+		c.user_select_id =
+		u.user_select_id WHERE members_id
+		= #{members_id};
+	</select>
+
+	<!-- 1. 선택한 장바구니 구매 -->
+	<select id="listOption"
+		parameterType="study.spring.wellcom.model.Cart" resultMap="cartMap">
+		SELECT
+		u.vga_choose, p.name, p.price FROM user_select u INNER
+		JOIN
+		product p ON
+		u.vga_choose = p.product_id WHERE u.vga_choose =
+		#{vga_choose};
+	</select>
+	<!-- 1. 장바구니 추가 -->
+	<insert id="insertItem" useGeneratedKeys="true"
+		keyProperty="cart_id" parameterType="study.spring.wellcom.model.Cart">
+		INSERT INTO cart (
+		members_id,
+		product_id, product_amount,
+		user_select_id) VALUES
+		(#{members_id},
+		#{product_id},#{product_amount},#{user_select_id})
+	</insert>
+
+	<!-- 1. 옵션 추가 -->
+	<insert id="insertOption" keyProperty="user_select_id"
+		parameterType="study.spring.wellcom.model.Cart">
+		INSERT INTO user_select
+		(vga_choose, vga_name, vga_price, ram_choose,
+		ram_name, ram_price, pow_choose, pow_name, pow_price,
+		storage_choose,
+		storage_name, storage_price, product_id) VALUES
+		(#{vga_choose},
+		#{vga_name}, #{vga_price}, #{ram_choose}, #{ram_name}, #{ram_price},
+		#{pow_choose}, #{pow_name}, #{pow_price}, #{storage_choose},
+		#{storage_name}, #{storage_price}, ${product_id})
+		<selectKey resultType="int" keyProperty="user_select_id"
+			order="AFTER">
+			SELECT
+			LAST_INSERT_ID() AS user_select_id,
+
+		</selectKey>
+	</insert>
+
+	<!-- 4. 장바구니 삭제 -->
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem"
+		parameterType="study.spring.wellcom.model.Cart">
+		DELETE FROM cart WHERE cart_id=#{cart_id};
+	</delete>
+
+</mapper>

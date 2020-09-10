@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductMapper">
+
+	<!-- Beans 클래스의 객체이름(id)과 클래스이름(type) -->
+	<resultMap id="productMap"
+		type="study.spring.wellcom.model.Product">
+		<!-- Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column) 매핑 -->
+		<result property="id" column="product_id" />
+		<result property="category" column="category" />
+		<result property="brand" column="brand" />
+		<result property="name" column="name" />
+		<result property="description" column="description" />
+		<result property="price" column="price" />
+		<result property="thumb" column="thumb" />
+		<result property="img" column="img" />
+		<result property="view_count" column="view_count" />
+		<result property="option_id" column="option_id" />
+		<result property="user_name" column="user_name" />
+		<result property="content" column="content" />
+		<result property="reg_date" column="reg_date" />
+	</resultMap>
+
+	<!-- 단일행 조회를 위한 기능 정의(특정 데이터) -->
+	<select id="selectItem"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT product_id, category, brand, name, description,
+		price, thumb,
+		img, view_count, option_id
+		FROM product WHERE
+		product_id=#{id}
+	</select>
+
+	<!-- 제품리뷰 조회를 위한 기능 정의 -->
+	<select id="selectReview"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT p.product_id, m.user_name, r.reg_date, r.content
+		FROM
+		product p
+		RIGHT JOIN review r ON p.product_id = r.product_id
+		LEFT JOIN
+		members m ON
+		r.members_id = m.members_id
+		WHERE p.product_id=#{id}
+	</select>
+
+	<!-- 제품카테고리 조회를 위한 기능 정의 -->
+	<select id="selectCategory"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT product_id, category, brand, name, price, thumb, view_count
+		FROM product
+		<if test="category != null">
+			WHERE category LIKE concat('%',#{category},'%')
+		</if>
+		<if test="category == null">
+			WHERE NOT category IN ('built')
+		</if>
+		<if test="listCount > 0">
+			ORDER BY view_count desc
+			LIMIT #{offset}, #{listCount}
+		</if>
+	</select>
+
+	<!-- 중첩조건 조회를 위한 기능 정의(모든 조건 충족) -->
+	<select id="selectWordOverlap"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT * FROM product
+
+		<where>
+			1=1
+			<if test="category != null and category != ''">
+				AND category LIKE concat('%', #{category}, '%')
+			</if>
+			<if test="brand != null and brand != ''">
+				AND brand LIKE concat('%', #{brand}, '%')
+			</if>
+			<if test="name != null and name != ''">
+				AND name LIKE concat('%', #{name}, '%')
+			</if>
+			<if test="description != null and description != ''">
+				AND description LIKE concat('%', #{description}, '%')
+			</if>
+			<if test="price != null and price != ''">
+				AND price LIKE concat('%', #{price}, '%')
+			</if>
+			<if test="thumb != null and thumb != ''">
+				AND thumb LIKE concat('%', #{thumb}, '%')
+			</if>
+			<if test="img != null and img != ''">
+				AND img LIKE concat('%', #{img}, '%')
+			</if>
+			<if test="view_count != null and view_count != ''">
+				AND view_count LIKE concat('%', #{view_count}, '%')
+			</if>
+			<if test="option_id != null and option_id != ''">
+				AND option_id LIKE concat('%', #{option_id}, '%')
+			</if>
+		</where>
+		ORDER BY id DESC
+	</select>
+
+	<!-- 조건에 부합하는 모든 데이터를 조회하는 기능 정의(검색어를 포함하는 모든 자료) -->
+	<select id="selectWordAll"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT * FROM Product
+
+		<where>
+			1=1
+			<if test="category != null and category != ''">
+				OR category LIKE concat('%', #{category}, '%')
+			</if>
+			<if test="brand != null and brand != ''">
+				OR brand LIKE concat('%', #{brand}, '%')
+			</if>
+			<if test="name != null and name != ''">
+				OR name LIKE concat('%', #{name}, '%')
+			</if>
+			<if test="description != null and description != ''">
+				OR description LIKE concat('%', #{description}, '%')
+			</if>
+			<if test="price != null and price != ''">
+				OR price LIKE concat('%', #{price}, '%')
+			</if>
+			<if test="thumb != null and thumb != ''">
+				OR thumb LIKE concat('%', #{thumb}, '%')
+			</if>
+			<if test="img != null and img != ''">
+				OR img LIKE concat('%', #{img}, '%')
+			</if>
+			<if test="view_count != null and view_count != ''">
+				OR view_count LIKE concat('%', #{view_count}, '%')
+			</if>
+			<if test="option_id != null and option_id != ''">
+				OR option_id LIKE concat('%', #{option_id}, '%')
+			</if>
+		</where>
+	</select>
+
+	<!-- 체크박스 상태유지를 위한 데이터 출력 -->
+	<select id="selectBox" parameterType="Map"
+		resultMap="productMap">
+		SELECT brand
+		FROM product
+		<where>
+			1=1
+			<if test="brand != null">
+				AND brand IN
+				<foreach collection="brand" item="type" open="(" close=")"
+					separator=",">
+					#{type}
+				</foreach>
+			</if>
+			<if test="brand == null">
+				AND brand IN nochecked
+			</if>
+		</where>
+	</select>
+	<!-- 체크박스 선택에 따라 데이터 출력 -->
+	<select id="selectIn" parameterType="Map" resultMap="productMap">
+		SELECT * FROM Product
+
+		<where>
+			1=1
+			<if test="brand != null">
+				AND brand IN
+				<foreach collection="brand" item="type" open="(" close=")"
+					separator=",">
+					#{type}
+				</foreach>
+			</if>
+		</where>
+	</select>
+
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertItem"
+		parameterType="study.spring.wellcom.model.Product"
+		useGeneratedKeys="true" keyProperty="id">
+
+		INSERT INTO product (category,
+		brand, name, description, price, thumb,
+		img)
+		VALUES
+		(#{category},#{brand},#{name},#{description},#{price},#{thumb},
+		#{img}
+		<if test="option_id != null and option_id != ''">
+			,#{option_id}
+		</if>
+		)
+	</insert>
+
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem"
+		parameterType="study.spring.wellcom.model.Product">
+		DELETE FROM product WHERE product_id=#{id};
+	</delete>
+
+	<!-- 데이터 갱신을 위한 기능 정의 -->
+	<update id="updateItem"
+		parameterType="study.spring.wellcom.model.Product">
+		UPDATE product
+		<set>
+			1=1
+			<if test="category != null and category != ''">
+				, category = #{category}
+			</if>
+			<if test="brand != null and brand != ''">
+				, brand = #{brand}
+			</if>
+			<if test="name != null and name != ''">
+				, name = #{name}
+			</if>
+			<if test="description != null and description != ''">
+				, description = #{description}
+			</if>
+			<if test="price != null and price != ''">
+				, price = #{price}
+			</if>
+			<if test="thumb != null and thumb != ''">
+				, thumb = #{thumb}
+			</if>
+			<if test="img != null and img != ''">
+				, img = #{img}
+			</if>
+			<if test="view_count != null and view_count != ''">
+				, view_count = #{view_count}
+			</if>
+			<if test="option_id != null and option_id != ''">
+				, option_id = #{option_id}
+			</if>
+		</set>
+		WHERE product_id = #{id};
+	</update>
+
+	<!-- 조립상품 페이지 구현을 위한 정보 조회 -->
+	<select id="selectItemAssemble"
+		parameterType="study.spring.wellcom.model.Product"
+		resultMap="productMap">
+		SELECT * FROM product p
+		LEFT JOIN user_select u ON
+		p.product_id= u.product_id
+		WHERE product_id = #{id}
+	</select>
+
+	<!-- index페이지 상품 노출을 위한 table데이터의 갯수 조회 -->
+	<select id="selectCountAll"
+		parameterType="study.spring.wellcom.model.Product" resultType="int">
+		SELECT COUNT(*) FROM product
+		WHERE NOT category IN ('built')
+		<if test="listCount > 0">
+			LIMIT #{offset}, #{listCount}
+		</if>
+	</select>
+	
+	<!-- int형 자동증가 쿼리 -->
+	<update id="selectTest"
+		parameterType="study.spring.wellcom.model.Product">
+		UPDATE product
+		SET view_count = view_count + 1
+		WHERE product_id = #{id}
+		</update>
+</mapper>

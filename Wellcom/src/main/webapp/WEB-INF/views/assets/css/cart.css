@@ -1,0 +1,183 @@
+@charset "utf-8";
+
+input[type=checkbox] {
+	margin-right: 5px;
+}
+
+.cart_product {
+	margin-bottom: 20px;
+}
+
+.cart_body {
+	padding: 5%;
+	padding-top: 0;
+}
+
+.blockquote.well {
+	font-size: 12px;
+	padding: 10px;
+	margin: 0 5%;
+	margin-bottom: 20px;
+}
+
+.product_img {
+	width: 100%;
+	display: block;
+}
+
+.product_name {
+	margin-left: 20px;
+	font-size: 20px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	float: left;
+}
+
+.image_box {
+	float: left;
+	width: 40%;
+	height:220px;
+}
+
+.info_box, .amountArea, .optionArea {
+	float: right;
+	width: 55%;
+	margin-bottom: 10px;
+	position:relative;
+}
+
+.amountArea .amount {
+	width: 40px;
+	height: 25px;
+	text-align: center;
+	position:relative;
+	top:-8px;
+	
+}
+
+.amountArea button {
+	width: 25px;
+	height: 25px;
+	border: 0;
+	background: 0;
+}
+
+.amountArea .option_change {
+	width: auto;
+	padding: 2px 5px;
+	position: absolute;
+	height : 25px;
+	right: 5%;
+	top: 0;
+	border: 0;
+}
+
+.optionArea {
+	margin: auto;
+	position: relative;
+}
+
+.optionArea > span{
+	line-height:2;
+}
+
+.optionArea .show_option {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+	width: 100%;
+	font-size:10px;
+	line-height:1.5;
+	margin-top: -5px;
+}
+
+.buttonArea {
+	margin-top:20px;
+}
+
+.buttonArea button {
+	width: 49%;
+	margin-right: 1%;
+	float: left;
+}
+
+hr {
+	border-top: 2px solid #000;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.priceArea, .finalArea {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.finalArea button {
+	width: 35%;
+}
+
+.finalPrice {
+	font-size: 16px;
+}
+
+.checkArea {
+	position: relative;
+	margin-bottom:10px;
+}
+
+.modal #optionPop {
+	margin-top: 30vh;
+}
+
+.modal .modal-content {
+	padding: 15px 10px;
+}
+
+.checkArea #checkDel1, .checkArea #checkDel2 {
+	position: absolute;
+	right: 0;
+	background-color: rgba(42, 42, 42, 0.6);
+	border: 0;
+	color: #fff;
+	padding: 2px 5px;
+}
+
+#content .cart_body .btn-default {
+	color: #fff;
+	background-color: rgba(42, 42, 42, 0.4);
+	border: 0;
+}
+
+#content .cart_body .btn-danger {
+	color: #fff;
+	background-color: rgba(218, 59, 61, 1);
+	border: 0;
+}
+
+#content .cart_body .btn-success {
+	color: #fff;
+	border: 0;
+	background-color: #ed9c28;
+}
+
+#content .cart_body .btn-warning {
+	color: #fff;
+	background-color: rgba(42, 42, 42, 0.4);
+	border: 0;
+}
+
+#content .cart_body .btn-primary {
+	color: #fff;
+	background-color: rgba(41, 70, 149, 1);
+	border: 0;
+}
+
+.modal#optionChange select, .modal#optionChange option {
+	width: 100%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
+}

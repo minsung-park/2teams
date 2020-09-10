@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+#breadcrumb {
+	background-color: #fff;
+}
+
+#breadcrumb>li+li:before {
+	content: ">\00a0";
+	padding: 0 5px;
+	color: #ccc;
+}
+
+#content_header {
+	font-size: 26px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+#content .table-responsive .table-striped th {
+	font-size: 16px;
+	padding-bottom: 10px;
+	text-align:left;
+	padding-right: 0px;
+}
+
+#th_title {
+	text-align:center;
+	width:35px;
+}
+
+
+
+#content .table-responsive thead .board_write {
+	width: 100%;
+	vertical-align:center;
+	margin: 5px 0 0 0;
+
+}
+
+#content .table #board_write_glyphicon {
+	font-size: 24px;
+	padding-left: 2px;
+}
+
+#content .board_heading {
+	text-align: left;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	padding-left: 8px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#content #write_content {
+	min-height: 700px;
+	width: 95%;
+	margin: 0 10px;
+	border: 1px solid white;
+}
+
+.write_button {
+	margin: 5px;
+	margin-top:40px;
+	width: 100%;
+}
+
+.write_button .btn {
+	width: 45%;
+	margin: 5px;
+}
+
+#text_content .cke_top{
+		margin-top:-20px;
+}

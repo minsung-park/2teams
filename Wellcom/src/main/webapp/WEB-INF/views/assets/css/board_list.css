@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.search_background_modal {
+	position: fixed;
+	z-index: 15000;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	display: none;
+}
+
+.search_modal_button_area {
+	
+	/* 요소의 좌측상단 꼭지점이 화면 중앙에 위치하게 된다. */
+	display: none;
+	position: fixed;
+	z-index: 20000;
+	width: 80%;
+	height: 100vh;
+	background: linear-gradient(to top, #FFFFFF, #f2f2f2);
+	overflow: auto;
+	/* 요소의 크기/2 만큼 왼쪽,상단 방향으로 이동시켜 가운데 배치한다 */
+	/* animation: bounceInLeft;
+  	animation-duration: 0.7s; */
+	animation: fadeInLeft;
+	animation-duration: 0.4s;
+	/*	 animation: slideInLeft;
+  	animation-duration: 0.5s; */
+}

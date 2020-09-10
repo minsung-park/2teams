@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+#content .select_group {
+    width: 90%;
+    margin: 5px auto;
+    border-bottom: 2px solid #264695;
+}
+
+.clear:after,
+#content .select_group li:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+#content .select_group li{
+    padding-bottom: 10px;
+}
+#content .select_group li .select_all {
+    display: block;
+    float: left;
+    width: 28%;
+    height: 40px;
+    border: 0;
+    border-radius: 7px;
+    background-color: rgba(36, 70, 249, 0.3);
+}
+
+#content .select_group li span {
+    display: block;
+    width: 70%;
+    float: right;
+    line-height: 5px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+#content .select_group li span label{
+    width: 30%;
+}
+
+#content .item_box {
+    width: 100%;
+}
+
+#content .item_box .item_list {
+    width: 90%;
+    margin: auto;
+}
+
+#content .item_box .item_list .item {
+    width: 46%;
+    float: left;
+    border: 1px solid #eee;
+    margin: 2% 2%;
+}
+
+#content .item_box .item_list .item img {
+    display: block;
+    width: auto;
+    height: 100px;
+    margin:auto;
+}
+
+#content .item_box .item_list .item span {
+    width: 100%;
+    height: 50px;
+    font-size: 0.8em;
+    display: block;
+    background-color: rgba(36, 70, 249, 0.1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.check_box .select_box:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}

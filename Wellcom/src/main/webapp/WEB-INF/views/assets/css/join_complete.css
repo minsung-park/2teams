@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/** 컨텐츠 영역 height 값 조절 (common.css에 기본 min-height 500px) */
+/*#content {
+    min-height: 200px;
+}*/
+
+/** 타이틀 영역 */
+
+#title_area {
+    width: 100%;
+    height: 50px;
+}
+
+#title_area h2 {
+    margin: auto;
+    line-height: 50px;
+    font-size: 14px;
+    color: #353535;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Nanum Gothic', '돋움', 'dotum', 'sans-serif';
+}
+
+/** 가입단계 분류 영역 */
+#progress {
+    width: 100%;
+}
+
+#progress li {
+    float: left;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 33.3%;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+#progress ul:after {
+    content: '';
+    float: none;
+    clear: both;
+    display: block;
+}
+
+#progress li:nth-child(3) {
+    background-color: #DC3937;
+    border-right: 1px solid #ccc;
+    color: #fff;
+}
+
+#progress li:nth-child(1) {
+    border-right: 1px solid #ccc;
+}
+
+/** 컨텐츠 영역 폼 **/
+#join_complete_box {
+    border: 1px solid #E8E8E8;
+    width: 94%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+    }
+
+
+#join_info_form {
+    margin-top: 20px;
+}
+
+#join_info_form ul {
+    border-top: 1px solid #E8E8E8;
+    border-right: 1px solid #E8E8E8;
+    border-left: 1px solid #E8E8E8;
+    width: 94%;
+    margin: auto;
+}
+
+#join_info_form ul:last-child {
+    border-bottom: 1px solid #E8E8E8;
+}
+
+#join_info_form li {
+    width: 100%;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+}
+
+#join_info_form .table_th {
+    width: 40%;
+    padding-left: 10px;
+    color: #757575;
+}
+
+
+#join_info_form .table_td {
+    width: 60%;
+    float: right;
+    padding-right: 10px;
+}
+
+#join_info_form:after {
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+}
+
+
+
+#button_type {
+    width: 94%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+
+#button_type #button_style {
+    padding-top: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+#button_style button {
+    float: left;
+}
+
+#button_style:after {
+    float: none;
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#button_type #button_style #button_next {
+    width: 100%;
+    margin-right: 2%;
+    height: 40px;
+    background-color: rgba(26, 26, 26, 0.9);
+    border: none;
+    color: #fff;
+}
+
+#button_style a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    line-height: 40px;
+}

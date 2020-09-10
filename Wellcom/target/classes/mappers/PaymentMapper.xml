@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace = "PaymentMapper">
+
+<!-- Beans 클래스의 객체이름(id)과 클래스이름(type)을 명시한다. -->
+<resultMap id="paymentMap" type="study.spring.wellcom.model.Payment">
+	<!--Beans의 멤버변수(property)이름과 대상 테이블의 컬럼(column)을 연결한다.  -->
+	<result property="payment_id" column="payment_id"/>
+	<result property="members_id" column="members_id"/>
+	<result property="payment_type" column="payment_type"/>
+	<result property="payment_inc" column="payment_inc"/>
+	<result property="payment_number" column="payment_number"/>
+	<result property="date" column="date"/>
+</resultMap>
+	
+	<!-- 단일행 조회를 위한 기능 정의 -->
+	<select id="selectItem" parameterType="study.spring.wellcom.model.Payment" resultMap="paymentMap">
+	SELECT payment_id, members_id, payment_type, payment_inc, payment_number, date FROM payment WHERE payment_id=#{payment_id};
+	</select>
+	
+	<!-- 다중행 조회를 위한 기능 정의 -->
+	<select id="selectList" parameterType="study.spring.wellcom.model.Payment" resultMap="paymentMap">
+	SELECT payment_id, members_id, payment_type, payment_inc, payment_number, date FROM payment
+	
+	<where>
+		<if test="members_id != null and members_id != ''">
+		
+			members_id LIKE concat('%', #{members_id}, '%')
+		</if>
+		<if test="payment_type != null and payment_type != ''">
+		
+			OR payment_type LIKE concat('%', #{payment_type}, '%')
+		</if>
+		<if test="payment_inc != null and payment_inc != ''">
+		
+			OR payment_inc LIKE concat('%', #{payment_inc}, '%')
+		</if>
+		<if test="payment_number != null and payment_number != ''">
+		
+			OR payment_number LIKE concat('%', #{payment_number}, '%')
+		</if>
+		<if test="date != null and date != ''">
+		
+			OR date LIKE concat('%', #{date}, '%')
+		</if>
+	</where>
+	
+	ORDER BY payment_id DESC
+	</select>
+
+	<!-- 데이터 저장을 위한 기능 정의 -->
+	<insert id="insertItem"
+  	parameterType="study.spring.wellcom.model.Payment" useGeneratedKeys="true" keyProperty="payment_id">
+ 		INSERT INTO payment(payment_id, members_id, payment_type, payment_inc, payment_number, date) VALUES ( #{payment_id}, #{members_id}, #{payment_type}, #{payment_inc}, #{payment_number}, #{date});
+ 	
+ 	
+ 	
+ 	</insert>
+
+	<!-- 데이터 삭제를 위한 기능 정의 -->
+	<delete id="deleteItem" parameterType="study.spring.wellcom.model.Payment">
+ 	
+ 	DELETE FROM payment WHERE payment_id=#{payment_id};
+ 	</delete>
+
+	<!-- 데이터 갱신을 위한 기능 정의 -->
+	<update id="updateItem" parameterType="study.spring.wellcom.model.Payment">
+ 	UPDATE payment SET payment_id=#{payment_id}, members_id=#{members_id}, payment_type=#{payment_type}, payment_inc=#{payment_inc}, payment_number=#{payment_number}, date=#{date}
+ 	WHERE payment_id=#{payment_id};
+ 	
+ 	</update>
+ 	
+ 	
+ 	
+ 	
+ 	  <!-- 데이터 수 조회하기  -->
+ 	
+	
+	<select id="selectCountAll" 
+            parameterType="study.spring.wellcom.model.Payment"
+            resultType="int">
+        SELECT COUNT(*) FROM Payment
+        
+        <where>
+           	<if test="members_id != null and members_id != ''">
+		
+			members_id LIKE concat('%', #{members_id}, '%')
+		</if>
+		<if test="payment_type != null and payment_type != ''">
+		
+			OR payment_type LIKE concat('%', #{payment_type}, '%')
+		</if>
+		<if test="payment_inc != null and payment_inc != ''">
+		
+			OR payment_inc LIKE concat('%', #{payment_inc}, '%')
+		</if>
+		<if test="payment_number != null and payment_number != ''">
+		
+			OR payment_number LIKE concat('%', #{payment_number}, '%')
+		</if>
+		<if test="date != null and date != ''">
+		
+			OR date LIKE concat('%', #{date}, '%')
+		</if>
+        </where>
+    </select>
+    
+</mapper>
+
+
+
+

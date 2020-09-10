@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+.content {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.content .summary {
+    width: 90%;
+    margin: auto;
+}
+
+.content .summary .img_box {
+    width: 100%;
+    height: 200px;
+    float: left;
+    text-align: center;
+}
+
+.content .summary .img_box img {
+    height: 100%;
+    width: auto;
+}
+
+.content .summary .text {
+    width: 100%;
+    height: 100px;
+    background-color: #aaa;
+    font-size: 12px;
+    overflow: auto;
+    font-style: #000;
+}
+
+.content .clear:after {
+    display: block;
+    content: '';
+    float: none;
+    clear: both;
+}
+
+.content .item {
+    width: 90%;
+    margin: auto;
+}
+
+.content .item img {
+    width: 100%;
+}
+
+.content .review {
+    padding-top: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.content .review li {
+    border-top: 1px solid #264695;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.content .review li:last-child {
+    border-bottom: 1px solid #264695;
+}
+
+.content .review_input_group {
+    width: 90%;
+    margin: auto;
+}
+
+.content .review_input_group .review_form_control {
+    height: 100px;
+}
+
+.content .input-group button {
+    height: 100px;
+    background-color: #eee;
+}
+
+.content .price_box {
+    background-color: #eee;
+    width: 100%;
+    padding: 10px 15px;
+    border-top: 2px solid #264695;
+    position: fixed;
+    bottom: 0;
+}
+
+.content .price_box .price_box_switch {
+    position: absolute;
+    top: -12px;
+    left: 42%;
+    width: 15%;
+}
+
+.content .price_box .price_toggle .shop_box {
+    padding: 10px 0;
+    height: 40px;
+}
+
+.content .price_box .price_toggle .shop_box .count {
+    float: left;
+    width: 50%;
+    text-align: left;
+}
+
+.content .price_box .price_toggle .shop_box .count input{
+	width: 35px;
+	text-align: center;
+}
+
+.content .price_box .price_toggle .shop_box .cost {
+    float: right;
+    width: 50%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.content .price_box .price_toggle .cost span {
+    font-size: 1.5em;
+}
+
+.content .price_box .price_toggle .shop_button {
+    text-align: center;
+}
+
+.content .price_box .price_toggle .shop_button .basket {
+    width: 45%;
+    height: 40px;
+    margin-right: 5%;
+}
+
+.content .shop_button .buy {
+    width: 45%;
+    height: 40px;
+}

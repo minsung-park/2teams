@@ -1,0 +1,75 @@
+/* 내용 영역 */
+
+/* 다른 CSS 파일에서 영향받는 항목 초기화*/
+#container .glyphicon {
+	padding-left: 0px;
+}
+
+#content {
+	margin-bottom: 0px;
+}
+#footer{
+	margin-top: 0px;
+}
+/* float 마감제 */
+.clear {
+	content: '';
+	float: none;
+	clear: both;
+	display: block;
+}
+
+/* 본 CSS 작업 시작 */
+#content {
+	width: 100%;
+	height: 100%;
+}
+
+/* 현재 페이지 내용 안내해주는 헤더 */
+
+#breadcrumb {
+    background-color: #fff;
+}
+
+#breadcrumb>li+li:before {
+    content: ">\00a0";
+    padding: 0 5px;
+    color: #ccc;
+}
+
+#content_header {
+    font-size: 26px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+/* 본 내용 작업 */
+#content_main {
+	width: 100%;
+	height: 100%;
+}
+
+#card_wrapper {
+	width: 100%;
+	height: 200px;
+	margin: auto;
+}
+
+#card_not_exist {
+	width: 100%;
+	text-align: center;
+	border-top: 1px solid #b9b9b9;
+	border-bottom: 1px solid #b9b9b9;
+	margin-top: 50px;
+	margin-bottom:50px;
+	padding-top: 50px;
+	padding-bottom:50px;
+}
+
+#button_return_mypage{
+	display: block;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
